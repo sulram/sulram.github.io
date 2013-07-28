@@ -1,0 +1,11 @@
+---
+title: @document.tag
+layout: master
+---
+<h2><%= @document.tag %></h2>
+
+<ul>
+<% for doc in @getFilesAtPath('projetos').findAll({tags: '$in': @document.tag}).toJSON(): %>
+    <li><a href="<%= doc.url %>"><%= doc.title %></a></li>
+<% end %>
+</ul>

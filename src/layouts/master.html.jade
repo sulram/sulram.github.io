@@ -1,0 +1,29 @@
+doctype 5
+html(lang="pt-BR")
+  head
+    title= "marlus.com | " + document.title
+    meta(charset="utf-8")
+    #link(type="text/css", rel="stylesheet", href="http://fonts.googleapis.com/css?family=Inconsolata:400,700")
+    link(type="text/css", rel="stylesheet", href="http://fonts.googleapis.com/css?family=Armata")
+    link(type="text/css", rel="stylesheet", href=site.url+"/css/normalize.css")
+    link(type="text/css", rel="stylesheet", href=site.url+"/css/marlus.css")
+  body
+    #header
+
+      h1(style="font-weight:normal")
+        a(href=site.url, data-slug="item")
+          | MARLUS
+          span.vfx @ULTRALEVE.ME
+
+      
+    #content
+      != content
+      #yield
+
+    script(rel="text/javascript", src=site.url+"/js/moment.min.js")
+    script(rel="text/javascript", src=site.url+"/js/moment.pt-br.js")
+    script(rel="text/javascript", src=site.url+"/js/jquery.js")
+    script(rel="text/javascript", src=site.url+"/js/isotope.js")
+    script(rel="text/javascript", src=site.url+"/js/jquery.tagcloud.js")
+    script(rel="text/javascript", src=site.url+"/js/jquery.fitvids.js")
+    script(rel="text/javascript", src=site.url+"/js/marlus.js")

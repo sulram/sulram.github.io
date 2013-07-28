@@ -1,0 +1,22 @@
+---
+title: 'marlus araujo'
+layout: master
+---
+#tags.tags-projetos
+  a.vfx(href='#',data-slug="item") tudo
+  &nbsp;
+  for tag in getTagCloud()
+    a.vfx(href=tag.url, rel=tag.count, data-slug=tag.slug, data-tag-weight=tag.weight)= tag.tag
+    &nbsp;
+br
+br
+#isotope
+  each proj in getFilesAtPath("projetos").findAllLive({},[{date:-1}]).toJSON()
+    article.item
+      a(href=proj.url)
+        img(src=site.url+"/img/covers/"+proj.slug+".jpg")
+        .title
+          .pad=proj.title
+        .tags
+          each tag in proj.tags
+            li= tag.split(' ').join('-').split('.').join('-')

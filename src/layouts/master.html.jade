@@ -7,6 +7,12 @@ html(lang="pt-BR")
     link(type="text/css", rel="stylesheet", href="http://fonts.googleapis.com/css?family=Armata")
     link(type="text/css", rel="stylesheet", href=site.url+"/css/normalize.css")
     link(type="text/css", rel="stylesheet", href=site.url+"/css/marlus.css")
+    script(type="text/javascript", src=site.url+"/js/moment.min.js")
+    script(type="text/javascript", src=site.url+"/js/moment.pt-br.js")
+    script(type="text/javascript", src=site.url+"/js/jquery.js")
+    script(type="text/javascript", src=site.url+"/js/isotope.js")
+    script(type="text/javascript", src=site.url+"/js/jquery.tagcloud.js")
+    script(type="text/javascript", src=site.url+"/js/jquery.fitvids.js")
   body
     #header
 
@@ -20,10 +26,15 @@ html(lang="pt-BR")
       != content
       #yield
 
-    script(rel="text/javascript", src=site.url+"/js/moment.min.js")
-    script(rel="text/javascript", src=site.url+"/js/moment.pt-br.js")
-    script(rel="text/javascript", src=site.url+"/js/jquery.js")
-    script(rel="text/javascript", src=site.url+"/js/isotope.js")
-    script(rel="text/javascript", src=site.url+"/js/jquery.tagcloud.js")
-    script(rel="text/javascript", src=site.url+"/js/jquery.fitvids.js")
-    script(rel="text/javascript", src=site.url+"/js/marlus.js")
+    script(type="text/javascript", src=site.url+"/js/marlus.js")
+    script(type="text/javascript").
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-1122051-7']);
+      _gaq.push(['_setDomainName', 'marlus.com']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();

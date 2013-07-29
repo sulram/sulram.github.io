@@ -5,19 +5,19 @@ html(lang="pt-BR")
     meta(charset="utf-8")
     #link(type="text/css", rel="stylesheet", href="http://fonts.googleapis.com/css?family=Inconsolata:400,700")
     link(type="text/css", rel="stylesheet", href="http://fonts.googleapis.com/css?family=Armata")
-    link(type="text/css", rel="stylesheet", href=site.url+"/css/normalize.css")
-    link(type="text/css", rel="stylesheet", href=site.url+"/css/marlus.css")
-    script(type="text/javascript", src=site.url+"/js/moment.min.js")
-    script(type="text/javascript", src=site.url+"/js/moment.pt-br.js")
-    script(type="text/javascript", src=site.url+"/js/jquery.js")
-    script(type="text/javascript", src=site.url+"/js/isotope.js")
-    script(type="text/javascript", src=site.url+"/js/jquery.tagcloud.js")
-    script(type="text/javascript", src=site.url+"/js/jquery.fitvids.js")
+    link(type="text/css", rel="stylesheet", href=site.url+"css/normalize.css")
+    link(type="text/css", rel="stylesheet", href=site.url+"css/marlus.css")
+    script(type="text/javascript", src=site.url+"js/moment.min.js")
+    script(type="text/javascript", src=site.url+"js/moment.pt-br.js")
+    script(type="text/javascript", src=site.url+"js/jquery.js")
+    script(type="text/javascript", src=site.url+"js/isotope.js")
+    script(type="text/javascript", src=site.url+"js/jquery.tagcloud.js")
+    script(type="text/javascript", src=site.url+"js/jquery.fitvids.js")
   body
     #header
 
       h1(style="font-weight:normal")
-        a(href=site.url, data-slug="item")
+        a(href="/", data-slug="item")
           | MARLUS
           span.vfx @ULTRALEVE.ME
 
@@ -26,7 +26,7 @@ html(lang="pt-BR")
       != content
       #yield
 
-    script(type="text/javascript", src=site.url+"/js/marlus.js")
+    script(type="text/javascript", src=site.url+"js/marlus.js")
     script(type="text/javascript").
       var _gaq = _gaq || [];
       _gaq.push(['_setAccount', 'UA-1122051-7']);

@@ -2,7 +2,7 @@ module.exports =
 
 	templateData:
 		site:
-			url: "http://marlus.com"
+			url: "/"
 			
 	#plugins:
 	#	datefromfilename:
@@ -17,4 +17,4 @@ module.exports =
 			outPath: 'dev-out'
 			templateData:
 				site:
-					url: 'http://localhost:9778'
+					url: '/'

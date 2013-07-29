@@ -1,4 +1,4 @@
-var timer, resizer;
+var app, timer, resizer;
 
 $(function () {
 
@@ -41,18 +41,9 @@ $(function () {
         $(item).find('.tags').remove();
     });
 
-    // TAG CLICK
-
-    $('#header h1 a, #tags a').mousedown(function(e){
-        e.preventDefault();
-        iso.filter($(this).attr('data-slug'));
-    }).click(function(e){
-        e.preventDefault();
-    });
-
     // PROJECT CLICK
 
-    $('#isotope article a').mousedown(function(e){
+    /*$('#isotope article a').mousedown(function(e){
         e.preventDefault();
         iso.filter('none');
         $('#yield').load($(this).attr('href') + ' #content > *',function(){
@@ -64,7 +55,7 @@ $(function () {
         });
     }).click(function(e){
         e.preventDefault();
-    });
+    });*/
 
     function highlightTags(){
         $('#yield .tags li').each(function(j,tag){
@@ -98,6 +89,37 @@ $(function () {
     };
 
     resizer();
+
+    // DAVIS: PUSH STATE
+
+    app = Davis(function () {
+        this.use(Davis.googleAnalytics);
+        this.get('/', function (req) {
+            iso.filter('item');
+        });
+        this.get('/tags/:tag', function (req) {
+            iso.filter(req.params['tag'].split('.html').join(''));
+        });
+        this.get('/projetos/:projeto', function (req) {
+            //iso.filter(req.params['projeto'].split('.html').join(''));
+            iso.filter('none');
+            $('#yield').load(req.path + ' #content > *', function(){
+                formatDates();
+                highlightTags();
+                $('#yield').hide(0).fadeIn(500);
+                $("#yield").fitVids();
+            });
+        });
+    })
+
+    app.start();
+
+    if(window.location.hash != ""){
+        var url = window.location.hash.split('#').join('');
+        setTimeout(function(){
+            Davis.location.assign(new Davis.Request(url));
+        },1000);
+    }
 
 });
 

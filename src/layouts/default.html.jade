@@ -1,14 +1,14 @@
 ---
 layout: master
 ---
-.col
+.col.col1
   if document.vimeo
     iframe(src="http://player.vimeo.com/video/"+document.vimeo+"?portrait=0", width="720", height="477", frameborder="0", webkitAllowFullScreen="webkitAllowFullScreen", mozallowfullscreen="mozallowfullscreen", allowFullScreen="allowFullScreen")
   ul.slides
     for file in getDocument().getAssociatedFiles().toJSON()
       li
         img(src=file.url, title=file.name)
-.col
+.col.col2
   h1= document.title
   if document.rel != null
     p

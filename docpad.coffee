@@ -14,6 +14,7 @@ module.exports =
 
 	environments:
 		development:
+			outPath: 'dev-out'
 			templateData:
 				site:
 					url: 'http://localhost:9778'

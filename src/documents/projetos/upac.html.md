@@ -14,7 +14,7 @@ tags:
 
 O site UPAC foi desenvolvido com objetivo de apresentar a Universidade Popular de Arte e Ciência de uma maneira autêntica, baseando-se na história de ação e construção coletiva, inclusiva e participativa.
 
-Existe hoje a preocupação de, não só estar na grande rede, mas desenvolver ferramentas que potencialize e organize grupos e comunidades. Mas além disso, há também o questionamento sobre as plataformas já disponíveis e amplamente usadas, que ao mesmo tempo oferecem ótimas interfaces de comunicação e mudaram nossa maneira de ser e estar no mundo físico e virtual, mas também detém o controle dos nossos dados, utilizando nossa informações para seus interesses corporativos e políticos.
+Existe hoje a preocupação de, não só estar na grande rede, mas desenvolver ferramentas que potencializem a organização de grupos e comunidades. Mas há também o questionamento sobre as plataformas disponíveis e amplamente usadas, que ao mesmo tempo oferecem ótimas interfaces de comunicação e mudaram nossa maneira de ser e estar no mundo físico e virtual, mas também detém o controle dos nossos dados, utilizando nossa informações para seus interesses corporativos e políticos.
 
 Por conta disso, decidimos que o site, muito além de institucional, seria uma solução de rede completa para oferecer uma alternativa à essas plataformas.
 

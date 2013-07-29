@@ -103,11 +103,13 @@ $(function () {
         this.get('/projetos/:projeto', function (req) {
             //iso.filter(req.params['projeto'].split('.html').join(''));
             iso.filter('none');
+            $('#content').addClass('loading');
             $('#yield').load(req.path + ' #content > *', function(){
                 formatDates();
                 highlightTags();
                 $('#yield').hide(0).fadeIn(500);
                 $("#yield").fitVids();
+                $('#content').removeClass('loading');
             });
         });
     })

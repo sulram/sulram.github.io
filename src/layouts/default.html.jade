@@ -11,7 +11,9 @@ layout: master
         iframe(src="http://player.vimeo.com/video/"+document.vimeo+"?portrait=0", width="720", height="480", frameborder="0", webkitAllowFullScreen="webkitAllowFullScreen", mozallowfullscreen="mozallowfullscreen", allowFullScreen="allowFullScreen")
     for file in getDocument().getAssociatedFiles().toJSON()
       li
-        img(src=file.url, title=file.name)
+        noscript
+          img(src=file.url, title=file.name)
+        img(src=site.url+"img/blank.png", data-src=file.url, title=file.name)
 .col.col2.post_content
   h1= document.title
   if document.rel != null

@@ -92,6 +92,7 @@ $(function () {
                 $('#yield').hide(0).fadeIn(500);
                 $("#yield").fitVids();
                 $('#content').removeClass('loading');
+                $("img").unveil();
             });
         });
     })
@@ -104,6 +105,8 @@ $(function () {
             Davis.location.assign(new Davis.Request(url));
         },1000);
     }
+
+    $("img").unveil();
 
 });
 

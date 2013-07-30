@@ -4,8 +4,8 @@ date: 2011-11
 rel: 'http://provadeartista.com'
 layout: default
 tags:
-	- website
-	- html5
+	- web
+	- html
 	- symphony
 	- ultraleve
 	- cms

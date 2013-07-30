@@ -4,8 +4,9 @@ date: 2011-05
 rel: 'http://typotheque.com/fonts/elementar'
 layout: default
 tags:
-	- webapp
-	- html5
+	- web
+	- app
+	- html
 	- ultraleve
 ---
 

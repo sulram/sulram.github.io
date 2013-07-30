@@ -4,12 +4,12 @@ date: 2013-07
 rel: 'http://upac.com.br'
 layout: "default"
 tags:
-	- website
-	- plataforma de rede
+	- web
+	- app
 	- node.js
 	- opensource
 	- ultraleve
-	- html5
+	- html
 ---
 
 O site UPAC foi desenvolvido com objetivo de apresentar a Universidade Popular de Arte e Ciência de uma maneira autêntica, baseando-se na história de ação e construção coletiva, inclusiva e participativa.

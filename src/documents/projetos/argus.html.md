@@ -4,7 +4,7 @@ date: 2009-10
 rel: 'http://arguscaruso.com.br'
 layout: default
 tags:
-	- website
+	- web
 	- cms
 	- wordpress
 	- flash

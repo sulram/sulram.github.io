@@ -1,6 +1,7 @@
 ---
 title: "Mana Bernardes"
 date: 2011-09
+rel: 'http://manabernardes.com'
 layout: default
 tags:
 	- website

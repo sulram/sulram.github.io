@@ -17,6 +17,12 @@ Todo conteúdo do site está disponível numa única página e utilizamos o efei
 
 Durante o mês de janeiro de 2012, disponibilizamos o streaming gratuito do filme através do site e a campanha de divulgação foi muito bem sucedida. Os extras do DVD podem ser assistidos gratuitamente.
 
+**symphony**
+
+O Symphony - <http://getsymphony.com> - é um CMS, assim como o Wordpress. Mas sua vantagem é a interface de gerenciamento de conteúdo enxuta e a flexibilidade que se tem para estruturar os dados do site, diferente do Wordpress, que se baseia sempre em posts, páginas e tem uma estrutura com mais opções do que as vezes é necessário.
+
+Quando um site não encaixa muito bem no padrão Wordpress, recomendo o Symphony. O site Prova de Artista se dá inteiro em uma página, e só alguns elementos do conteúdo precisariam ser atualizados, perfeito pra esse CMS.
+
 **créditos**
 
 - Marlus / Design e desenvolvimento

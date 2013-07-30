@@ -24,7 +24,10 @@
     this.one("unveil", function() {
       source = this.getAttribute(attrib);
       source = source || this.getAttribute("data-src");
-      if (source) this.setAttribute("src", source);
+      if (source) {
+        this.setAttribute("src", source);
+        $(this).hide().fadeIn(1000);
+      }
     });
 
     function unveil() {

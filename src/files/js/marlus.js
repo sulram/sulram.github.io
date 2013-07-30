@@ -92,7 +92,7 @@ $(function () {
                 $('#yield').hide(0).fadeIn(500);
                 $("#yield").fitVids();
                 $('#content').removeClass('loading');
-                $("img").unveil();
+                $("img").unveil(-100);
             });
         });
     })
@@ -106,7 +106,7 @@ $(function () {
         },1000);
     }
 
-    $("img").unveil();
+    $("img").unveil(-100);
 
 });
 

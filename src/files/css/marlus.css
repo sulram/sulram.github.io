@@ -83,7 +83,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #tags.highlight a {
-	color: #ccc !important;
+	color: #999 !important;
 }
 
 #tags a.active,
@@ -113,7 +113,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #yield {
-	
+	overflow: hidden;
 }
 
 #content h1 {
@@ -128,12 +128,21 @@ h1, h2, h3, h4, h5, h6 {
 	text-transform: lowercase;
 }
 
-#content .btn {
+#content .post_content a {
+	text-decoration: underline;
+}
+
+#content .post_content a:hover {
+	text-decoration: none;
+}
+
+#content .post_content .btn {
 	display: inline-block;
 	padding: 10px 20px;
 	background: #efefef;
 	color: #333;
 	border-radius: 2px;
+	text-decoration: none;
 }
 
 #content .btn:hover {
@@ -153,10 +162,6 @@ h1, h2, h3, h4, h5, h6 {
 
 #content .col2 {
 	width: 35%;
-}
-
-#content .col img {
-	max-width: 100%;
 }
 
 #content iframe {
@@ -181,6 +186,10 @@ h1, h2, h3, h4, h5, h6 {
 	padding: 0;
 	line-height: 0;
 	margin-bottom: 20px;
+}
+
+#content .slides li img {
+	width: 100%;
 }
 
 #isotope {

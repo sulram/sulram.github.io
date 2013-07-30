@@ -2,16 +2,7 @@ var app, timer, resizer;
 
 $(function () {
 
-    // TAG CLOUD PLUGIN
-
-    $.fn.tagcloud.defaults = {
-        size: {start: 11, end: 16, unit: 'pt'},
-        color: {start: '#999', end: '#444'}
-    };
-
-    $('#tags a').tagcloud();
-
-    // ISOTOPE PLUGIN
+    // ISOTOPE
 
     var iso = $('#isotope');
     iso.isotope({
@@ -32,7 +23,14 @@ $(function () {
         iso.isotope({ filter: '.' + filter });
     };
 
-    // LEARN FILTER
+    // TAGS
+
+    $.fn.tagcloud.defaults = {
+        size: {start: 11, end: 16, unit: 'pt'},
+        color: {start: '#999', end: '#444'}
+    };
+
+    $('#tags a').tagcloud();
 
     $('#isotope .item').each(function(i,item){
         $(item).find('.tags li').each(function(j,tag){
@@ -40,22 +38,6 @@ $(function () {
         });
         $(item).find('.tags').remove();
     });
-
-    // PROJECT CLICK
-
-    /*$('#isotope article a').mousedown(function(e){
-        e.preventDefault();
-        iso.filter('none');
-        $('#yield').load($(this).attr('href') + ' #content > *',function(){
-            formatDates();
-            highlightTags();
-            $('#yield').hide(0).fadeIn(500);
-            $("#yield").fitVids();
-            console.log(arguments);
-        });
-    }).click(function(e){
-        e.preventDefault();
-    });*/
 
     function highlightTags(){
         $('#yield .tags li').each(function(j,tag){
@@ -66,13 +48,13 @@ $(function () {
         $('#yield .tags').remove();
     }
 
-    // DATE PLUGIN
+    // DATE
 
     moment.lang('pt-br');
 
-    // DATE FORMAT
-
     formatDates();
+
+    // RESIZE
 
     $(window).resize(function(){
         clearTimeout(timer);

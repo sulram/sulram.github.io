@@ -9,6 +9,11 @@ module.exports =
 	#		removeDate: true
 	#		dateRegExp: /\b(\d{4})-(\d{2})-/
 
+	plugins:
+		ghpages:
+			deployRemote: 'origin'
+			deployBranch: 'master'
+
 	# =================================
 	# Environments
 

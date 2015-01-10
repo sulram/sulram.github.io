@@ -5,7 +5,6 @@ rel: 'http://manabernardes.com'
 layout: default
 tags:
 	- web
-	- cms
 	- wordpress
 	- html
 	- ultraleve

@@ -1,25 +1,22 @@
-module.exports =
+# DocPad Configuration File
+# http://docpad.org/docs/config
 
-	templateData:
-		site:
-			url: "/"
-			
-	#plugins:
-	#	datefromfilename:
-	#		removeDate: true
-	#		dateRegExp: /\b(\d{4})-(\d{2})-/
+# Define the DocPad Configuration
+docpadConfig = {
 
-	plugins:
-		ghpages:
-			deployRemote: 'origin'
-			deployBranch: 'master'
 
-	# =================================
-	# Environments
+  plugins:
 
-	environments:
-		development:
-			outPath: 'dev-out'
-			templateData:
-				site:
-					url: '/'
+    tags:
+      extension: '.html.jade'
+      injectDocumentHelper: (document) ->
+        document.setMeta(
+          layout: 'master'
+          data: """
+            != partial('tags')
+            """
+        )
+}
+
+# Export the DocPad Configuration
+module.exports = docpadConfig

@@ -1,40 +1,37 @@
-doctype 5
+doctype html
 html(lang="pt-BR")
   head
     title= "marlus.com | " + document.title
     meta(charset="utf-8")
-    meta(name="viewport", content="width=device-width, initial-scale=1, maximum-scale=1")
-    #link(type="text/css", rel="stylesheet", href="http://fonts.googleapis.com/css?family=Inconsolata:400,700")
+    //-meta(name="viewport", content="width=device-width, initial-scale=1, maximum-scale=1")
     link(type="text/css", rel="stylesheet", href="http://fonts.googleapis.com/css?family=Armata")
-    link(type="text/css", rel="stylesheet", href=site.url+"css/normalize.css")
-    link(type="text/css", rel="stylesheet", href=site.url+"css/marlus.css")
+    link(type="text/css", rel="stylesheet", href="http://fonts.googleapis.com/css?family=Fira+Sans:400,700,400italic,700italic")
+    link(type="text/css", rel="stylesheet", href=site.url+"/css/normalize.css")
+    link(type="text/css", rel="stylesheet", href=site.url+"/css/marlus.css")
     script(type="text/javascript").
       if(history && history.pushState && window.location.pathname != "/"){
         window.location = 'http://' + window.location.host + '#' + window.location.pathname;
       }
-    script(type="text/javascript", src=site.url+"js/moment.min.js")
-    script(type="text/javascript", src=site.url+"js/moment.pt-br.js")
-    script(type="text/javascript", src=site.url+"js/jquery.js")
-    script(type="text/javascript", src=site.url+"js/isotope.js")
-    script(type="text/javascript", src=site.url+"js/jquery.tagcloud.js")
-    script(type="text/javascript", src=site.url+"js/jquery.fitvids.js")
-    script(type="text/javascript", src=site.url+"js/jquery.unveil.js")
-    script(type="text/javascript", src=site.url+"js/davis.min.js")
-    script(type="text/javascript", src=site.url+"js/davis.ga.js")
+    script(type="text/javascript", src=site.url+"/js/libs/moment.min.js")
+    script(type="text/javascript", src=site.url+"/js/libs/moment.pt-br.js")
+    script(type="text/javascript", src=site.url+"/js/libs/jquery.js")
+    script(type="text/javascript", src=site.url+"/js/libs/isotope.js")
+    script(type="text/javascript", src=site.url+"/js/libs/jquery.tagcloud.js")
+    script(type="text/javascript", src=site.url+"/js/libs/jquery.fitvids.js")
+    script(type="text/javascript", src=site.url+"/js/libs/davis.min.js")
+    script(type="text/javascript", src=site.url+"/js/libs/davis.ga.js")
   body
-    #header
-
-      h1(style="font-weight:normal")
-        a(href="/")
-          | MARLUS
-          span.vfx @MARLUS.COM
+    //#header
+    //  h1(style="font-weight:normal")
+    //    a(href="/")
+    //      | MARLUS
 
       
     #content
       != content
       #yield
 
-    script(type="text/javascript", src=site.url+"js/marlus.js")
+    script(type="text/javascript", src=site.url+"/js/marlus.js")
     script(type="text/javascript").
       var _gaq = _gaq || [];
       _gaq.push(['_setAccount', 'UA-1122051-7']);

@@ -1,10 +1,16 @@
 ::-moz-selection { background:#00ff00; color:#fff; text-shadow: none; } 
 ::selection { background:#00ff00; color:#fff; text-shadow: none; } 
 
+html {
+	overflow-x: hidden;
+	overflow-y: scroll;
+}
+
 body {
 	height: 100%;
 	color: #333;
-	font-family: 'Armata','Inconsolata';
+	font-family: 'Armata';
+	margin-right: -20px;
 }
 
 a {
@@ -29,12 +35,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #header {
-	position: absolute;
-	width: 160px;
-	top: 0;
-	left: 0;
-	padding: 20px;
-	text-align: center;
+	position: relative;
+	padding: 0 40px;
+	margin: 20px auto 0;
+	width: auto;
+	max-width: 1200px;
+	overflow: hidden;
 }
 
 #header h1 {
@@ -69,17 +75,13 @@ h1, h2, h3, h4, h5, h6 {
 	line-height: 1.5em;
 }
 
-#content {
-	padding: 20px 0;
-	margin-left: 200px;
-}
-
 #tags {
 	margin-right: 20px;
 }
 
 #tags a {
 	display: inline-block;
+	margin: 2px 4px;
 }
 
 #tags.highlight a {
@@ -93,10 +95,18 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #tags.tags-projetos {
-	margin-top: 18px;
+	/*margin-top: 18px;*/
+}
+
+#tags.tags-projetos .tag-marlus {
+	font-size: 18px;
 }
 
 #content {
+	padding: 0 40px;
+	margin: 60px auto 0;
+	width: auto;
+	max-width: 1200px;
 	font-size: 14px;
 	overflow: hidden;
 	margin-bottom: 60px;
@@ -137,12 +147,17 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #content .post_content .btn {
+	margin-top: 20px;
 	display: inline-block;
 	padding: 10px 20px;
-	background: #efefef;
-	color: #333;
+	background: #555;
+	color: #fff;
 	border-radius: 2px;
 	text-decoration: none;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	max-width: 90%;
 }
 
 #content .btn:hover {
@@ -152,7 +167,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #content .col {
-	float: left;
+	float: right;
 	margin-right: 5%;
 }
 
@@ -190,6 +205,10 @@ h1, h2, h3, h4, h5, h6 {
 
 #content .slides li img {
 	width: 100%;
+}
+
+#content .slides li img.outlined {
+	border: 1px solid #eee;
 }
 
 #isotope {
@@ -281,37 +300,28 @@ h1, h2, h3, h4, h5, h6 {
           transition-property:         transform, opacity;
 }
 
+@media only screen and (min-width: 768px) {
 
-@media only screen and (max-width: 1024px) {
-
-	#header {
-		position: relative;
-		width: auto;
+	#content .post_content {
+		transition: transform 1.2s ease;
+		transform: translate3d(0px,0px,0px);
 	}
 
-	#content {
-		padding: 0;
-		margin: 0 40px;
-		width: auto;
+	#content.loading .post_content  {	
+		transform: translate3d(0px,100px,0px);
 	}
-
 }
 
 @media only screen and (max-width: 767px) {
-	
-	#header {
-		position: relative;
-		width: auto;
-	}
 
 	#content {
 		padding: 0;
-		margin: 0 40px;
+		margin: 60px 60px 0 40px;
 		width: auto;
 	}
 
 	#tags {
-		text-align: center;
+		
 	}
 
 	#content .col {

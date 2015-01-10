@@ -5,13 +5,12 @@ rel: 'http://bicicletorama.com.br'
 vimeo: '44531578'
 layout: "default"
 tags:
-	- jogo
+	- game design
 	- kinect
 	- arduino
 	- gambiarra
-	- encontros digitais
 	- openframeworks
-	- opendesign
+	- opensource
 ---
 
 Bicicletorama é um jogo onde os jogadores pedalam e guiam bicicletas de verdade numa corrida virtu-real: ciclistas virtuais projetados numa pista cheias de obstáculos reais, carrinhos de brinquedo.
@@ -20,10 +19,6 @@ Apresentado pela primeira vez no festival CircoDigital, do Circo Voador, a ideia
 
 Bicicletorama foi criado por 5 amigos, designer e programadores de mídias digitais: Carlos Oliveira, Harrison Mendonça, Mário Gesteira, Marlus Araujo e Tommy Linderstrom. Mas contamos com a ajuda de inúmeros colaboradores: amigos, familiares, a rede Encontros Digitais e nossos apoiadores no Catarse.
 
-Como precisávamos prestar contas para nossa campanha e tínhamos um mês para o desenvolver o projeto, toda a nossa documentação ia para o nosso canal de vídeo e página do Catarse. Compartilhando nossos processos de criação e de desenvolvimento, contando com a colaboração de muita gente, trabalhando juntos remotamente, posso dizer que o Bicicletorama é um projeto de open design e cria da cultura digital.
-
-Além do Circo Voador, foi apresentado em 2012 na escola de design Oi Kabum, no Rendezvous Catarse e no Pavão ESDI. Também foi tema de palestra no Convescote da Caos! Design, no INSERT Brasil 2012 e na ESDI. Em 2013, foi apresentado no projeto Geringonça do Norte Comum.
-
 **tecnologia**
 
 - as quatro bicicletas ficam suspensas por suportes de treino de triatlon
@@ -31,3 +26,5 @@ Além do Circo Voador, foi apresentado em 2012 na escola de design Oi Kabum, no 
 - o computador do jogo se conecta ao Arduino, ao projetor e a um Kinect
 - o Kinect faz a topografia do ambiente e detecta os obstáculos
 - o jogo cria então um campo eletro magnetico de diversão, emoção e conectividade entre as pessoas que estão num raio de 25m
+
+** fotos: Luke Garcia **

@@ -5,7 +5,6 @@ rel: 'http://typotheque.com/fonts/elementar'
 layout: default
 tags:
 	- web
-	- app
 	- html
 	- ultraleve
 ---

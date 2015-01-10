@@ -20,21 +20,22 @@ $(function () {
         }
         $('#tags.highlight').removeClass('highlight');
         
-        iso.isotope({ filter: '.' + filter });
+        iso.isotope({ filter: '.tag-' + filter });
+        console.log('.tag-' + filter)
     };
 
     // TAGS
 
     $.fn.tagcloud.defaults = {
         size: {start: 11, end: 16, unit: 'pt'},
-        color: {start: '#999', end: '#444'}
+        color: {start: '#999', end: '#999'}
     };
 
     $('#tags a').tagcloud();
 
-    $('#isotope .item').each(function(i,item){
+    $('#isotope .tag-item').each(function(i,item){
         $(item).find('.tags li').each(function(j,tag){
-            $(item).addClass($(tag).text());
+            $(item).addClass('tag-' + $(tag).text());
         });
         $(item).find('.tags').remove();
     });
@@ -91,8 +92,12 @@ $(function () {
                 highlightTags();
                 $('#yield').hide(0).fadeIn(500);
                 $("#yield").fitVids();
-                $('#content').removeClass('loading');
-                $("img").unveil(-100);
+                setTimeout(function(){
+                    $('#content').removeClass('loading');
+                },10);
+                setTimeout(function(){
+                    $(window).scroll();
+                },500);
             });
         });
     })
@@ -105,8 +110,6 @@ $(function () {
             Davis.location.assign(new Davis.Request(url));
         },1000);
     }
-
-    $("img").unveil(-100);
 
 });
 

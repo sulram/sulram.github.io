@@ -5,9 +5,9 @@ rel: 'http://arguscaruso.com.br'
 layout: default
 tags:
 	- web
-	- cms
 	- wordpress
 	- flash
+	- html
 	- ultraleve
 ---
 

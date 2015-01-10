@@ -1,6 +1,18 @@
 ---
 layout: master
----
+---      
+.col.col2.post_content
+  h1= document.title
+  p
+    strong.date= document.date
+  != content
+  if document.rel != null
+    p
+      a.btn.vfx(href=document.rel, target="_blank")
+        =document.rel.split('://')[1]
+  .tags
+    each tag in document.tags
+      li= tag.split(' ').join('-').split('.').join('-')
 .col.col1
   ul.slides
     if document.youtube
@@ -9,20 +21,7 @@ layout: master
     if document.vimeo
       li
         iframe(src="http://player.vimeo.com/video/"+document.vimeo+"?portrait=0", width="720", height="480", frameborder="0", webkitAllowFullScreen="webkitAllowFullScreen", mozallowfullscreen="mozallowfullscreen", allowFullScreen="allowFullScreen")
+    
     for file in getDocument().getAssociatedFiles().toJSON()
       li
-        noscript
-          img(src=file.url, title=file.name)
-        img(src=site.url+"img/blank.png", data-src=file.url, title=file.name)
-.col.col2.post_content
-  h1= document.title
-  if document.rel != null
-    p
-      a.btn.vfx(href=document.rel, target="_blank")=document.rel.split('://')[1]
-    br
-  p
-    strong.date= document.date
-  != content
-  .tags
-    each tag in document.tags
-      li= tag.split(' ').join('-').split('.').join('-')
+        img(src=file.url, title=file.name, class=typeof document.outlines === "undefined" ? "" : "outlined")

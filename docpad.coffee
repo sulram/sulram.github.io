@@ -3,7 +3,10 @@
 
 # Define the DocPad Configuration
 docpadConfig = {
-
+  
+  templateData:
+    site:
+      url: "/"
 
   plugins:
 
@@ -16,6 +19,11 @@ docpadConfig = {
             != partial('tags')
             """
         )
+
+    ghpages:
+        deployRemote: 'pages'
+        deployBranch: 'master'
+
 }
 
 # Export the DocPad Configuration

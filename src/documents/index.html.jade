@@ -14,7 +14,7 @@ layout: master
   each proj in getFilesAtPath("projetos").findAllLive({},[{date:-1}]).toJSON()
     article.tag-item
       a(href=proj.url)
-        img(src=site.url+"/associated-covers/"+proj.slug+".jpg")
+        img(src=site.url+"associated-covers/"+proj.slug+".jpg")
         .title
           .pad=proj.title
         .tags

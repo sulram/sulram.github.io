@@ -1,7 +1,7 @@
 ---
 title: "Piauí: As viagens de Dilma, Marina e Aécio"
 date: 2014-10
-rel: 'http://revistapiaui.estadao.com.br/blogs/especial/geral/infografico-as-viagens-de-dilma-marina-e-aecio'
+rel: 'http://revistapiaui.estadao.com.br/especial/infografico-as-viagens-de-dilma-marina-e-aecio/'
 layout: default
 outlines: true
 tags:

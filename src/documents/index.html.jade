@@ -3,12 +3,27 @@ title: 'marlus araujo'
 layout: master
 ---
 #tags.tags-projetos
-  a.tag-marlus.vfx(href='/')
-    | marlus&nbsp;
+  a.tag.tag-marlus.vfx(href='/')
+    | marlus
   for data in getTagCloud()
     | 
-    a(href=data.url, rel=data.count, data-slug=data.tag.split(' ').join('-'), data-tag-weight=data.weight)
+    a.tag(href=data.url, rel=data.count, data-slug=data.tag.split(' ').join('-'), data-tag-weight=data.weight)
       = data.tag
+  div.social__wrapper
+    div.social__item
+      a.social__icon--email(href="mailto:m@marlus.com", target="_blank")
+        i.icon--email
+    //div.social__item
+    //  a.social__icon--facebook(href="https://facebook.com/marlus.araujo", target="_blank")
+    //    i.icon--facebook
+    div.social__item
+      a.social__icon--twitter(href="https://twitter.com/marlus", target="_blank")
+        i.icon--twitter
+    div.social__item
+      a.social__icon--github(href="https://github.com/sulram", target="_blank")
+        i.icon--github
+
+
 #loader.vfx
 #isotope
   each proj in getFilesAtPath("projetos").findAllLive({},[{date:-1}]).toJSON()

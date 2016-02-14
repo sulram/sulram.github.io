@@ -79,17 +79,17 @@ h1, h2, h3, h4, h5, h6 {
 	margin-right: 20px;
 }
 
-#tags a {
+#tags a.tag {
 	display: inline-block;
 	margin: 2px 4px;
 }
 
-#tags.highlight a {
+#tags.highlight a.tag {
 	color: #999 !important;
 }
 
-#tags a.active,
-#tags.highlight a.active {
+#tags a.tag.active,
+#tags.highlight a.tag.active {
 	/*text-decoration: underline;*/
 	color: #111 !important;
 }

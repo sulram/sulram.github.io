@@ -8,6 +8,8 @@ html(lang="pt-BR")
     link(type="text/css", rel="stylesheet", href=site.url+"css/normalize.css")
     link(type="text/css", rel="stylesheet", href=site.url+"css/social-icons.css")
     link(type="text/css", rel="stylesheet", href=site.url+"css/marlus.css")
+    link(type="text/css", rel="stylesheet", href=site.url+"js/libs/tooltipster/css/tooltipster.css")
+    link(type="text/css", rel="stylesheet", href=site.url+"js/libs/tooltipster/css/themes/tooltipster-light.css")
     script(type="text/javascript").
       if(history && history.pushState && window.location.pathname != "/"){
         window.location = 'http://' + window.location.host + '#' + window.location.pathname;
@@ -20,6 +22,7 @@ html(lang="pt-BR")
     script(type="text/javascript", src=site.url+"js/libs/jquery.fitvids.js")
     script(type="text/javascript", src=site.url+"js/libs/davis.min.js")
     script(type="text/javascript", src=site.url+"js/libs/davis.ga.js")
+    script(type="text/javascript", src=site.url+"js/libs/tooltipster/js/jquery.tooltipster.js")
   body
     //#header
     //  h1(style="font-weight:normal")
@@ -43,3 +46,9 @@ html(lang="pt-BR")
         ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
       })();
+
+      $(document).ready(function() {
+        $('.social__icon').tooltipster({
+          theme: 'tooltipster-light'
+        });
+      });

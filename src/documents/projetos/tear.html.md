@@ -1,12 +1,11 @@
 ---
 title: "tear"
 date: 2014-02
-rel: 'http://tear.app.fabulosa.blog.br'
 youtube: 'z6mnd_Z5v04'
 layout: default
 tags:
   - web
-  - dataviz
+  - datavis
   - fabulosa
   - opensource
   - nodejs

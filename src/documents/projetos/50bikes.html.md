@@ -1,7 +1,8 @@
 ---
 title: "50bikes"
 date: 2012-09
-rel: 'https://github.com/sulram/50bikes/'
+rel:
+	- 'https://github.com/sulram/50bikes/'
 youtube: 'nRAJoBh9OUw'
 layout: default
 tags:

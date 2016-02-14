@@ -1,7 +1,8 @@
 ---
 title: "Prova de Artista"
 date: 2011-11
-rel: 'http://provadeartista.com'
+rel:
+	- 'http://provadeartista.com'
 layout: default
 tags:
 	- web

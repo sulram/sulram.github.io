@@ -1,7 +1,8 @@
 ---
 title: "Argus Caruso"
 date: 2009-10
-rel: 'http://arguscaruso.com.br'
+rel:
+	- 'http://arguscaruso.com.br'
 layout: default
 tags:
 	- web

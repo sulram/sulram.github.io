@@ -1,7 +1,8 @@
 ---
 title: Air de Cuisine
 date: 2013-11
-rel: 'http://airdecuisine.com.br'
+rel:
+	- 'http://airdecuisine.com.br'
 layout: default
 tags:
 	- web

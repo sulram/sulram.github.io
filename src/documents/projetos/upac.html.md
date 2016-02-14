@@ -1,7 +1,8 @@
 ---
 title: "universidade popular de arte e ciência"
 date: 2013-07
-rel: 'http://upac.com.br'
+rel:
+	- 'http://upac.com.br'
 layout: "default"
 tags:
 	- web

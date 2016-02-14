@@ -7,9 +7,9 @@ layout: master
     strong.date= document.date
   != content
   if document.rel != null
-    p
-      a.btn.vfx(href=document.rel, target="_blank")
-        =document.rel.split('://')[1]
+      each rel in document.rel
+        a.btn.vfx(href=rel, target="_blank")
+          =rel.split('://')[1]
   .tags
     each tag in document.tags
       li= tag.split(' ').join('-').split('.').join('-')

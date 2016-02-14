@@ -1,7 +1,9 @@
 ---
 title: "bicicletorama"
 date: 2012-06
-rel: 'http://bicicletorama.com.br'
+rel:
+	- 'http://bicicletorama.com.br'
+	- 'https://github.com/bicicletorama'
 vimeo: '44531578'
 layout: "default"
 tags:

@@ -1,7 +1,8 @@
 ---
 title: do bem™
 date: 2014-07
-rel: 'http://dobem.com'
+rel:
+	- 'http://dobem.com'
 layout: default
 tags:
   - web

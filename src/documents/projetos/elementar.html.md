@@ -1,7 +1,8 @@
 ---
 title: "Elementar Navigator"
 date: 2011-05
-rel: 'http://typotheque.com/fonts/elementar'
+rel:
+	- 'http://typotheque.com/fonts/elementar'
 layout: default
 tags:
 	- web

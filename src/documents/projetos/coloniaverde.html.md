@@ -1,7 +1,8 @@
 ---
 title: Colonia Verde
 date: 2014-02
-rel: 'http://coloniaverdenyc.com'
+rel:
+	- 'http://coloniaverdenyc.com'
 layout: default
 outlines: true
 tags:

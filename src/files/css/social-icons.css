@@ -47,7 +47,7 @@
 
 .social__item {
   display: inline-block;
-  margin-right: 0.1em;
+  margin-right: 4px;
   position: relative;
   top: -1px;
 }

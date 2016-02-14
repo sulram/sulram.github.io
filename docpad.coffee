@@ -21,7 +21,7 @@ docpadConfig = {
         )
 
     ghpages:
-        deployRemote: 'pages'
+        deployRemote: 'origin'
         deployBranch: 'master'
 
 }

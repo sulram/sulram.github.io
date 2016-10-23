@@ -8,6 +8,7 @@ layout: default
 vimeo: 116386356
 tags:
 	- arduino
+	- creative coding
 	- nano
 	- hiperorganismos
 	- ufrj

@@ -8,6 +8,7 @@ layout: default
 vimeo: 37461663
 tags:
 	- arduino
+	- creative coding
 	- processing
 	- nano
 	- hiperorganismos

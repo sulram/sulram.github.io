@@ -4,6 +4,7 @@ date: 2012-03
 vimeo: '72017404'
 layout: default
 tags:
+	- creative coding
 	- pesquisa
 	- openframeworks
 	- processing

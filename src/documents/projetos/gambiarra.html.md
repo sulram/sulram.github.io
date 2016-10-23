@@ -4,6 +4,7 @@ date: 2012-08
 layout: default
 tags:
 	- arduino
+	- creative coding
 	- processing
 	- gambiarra
 	- workshop

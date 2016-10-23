@@ -229,6 +229,10 @@ h1, h2, h3, h4, h5, h6 {
 	overflow: hidden;
 }
 
+#isotope article a img {
+	max-width: 100%;
+}
+
 #isotope article a .title {
 	display: block;
 	color: #333;

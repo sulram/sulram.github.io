@@ -3,9 +3,9 @@ title: "mulheres de grey gardens"
 date: 2013-05
 layout: "default"
 tags:
-	- video mapping
+	- teatro
 	- touchdesigner
-	- ultraleve
+	- video mapping
 ---
 
 A versão brasileira do musical “As Mulheres de Grey Gardens”, produção da Oz dirigida por Wolf Maya e estrelada por Soraya Ravenle e Suely Franco, teve como solução apontada pela cenógrafa Bia Junqueira o uso de projeção para dar suporte dramático ao grande espetáculo instalado na Sala Baden Powell.

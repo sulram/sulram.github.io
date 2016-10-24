@@ -53,13 +53,15 @@
 }
 
 .social__item a {
-  color: #fff;
-  background-color: #999;
+  color: #999;
+  background-color: #fff;
+  border: 1px solid #999;
 }
 
 .social__item a:hover {
   text-decoration: none;
-  background-color: #666;
+  color: #fff;
+  background-color: #999;
 }
 
 .icon, [class^="icon--"] {

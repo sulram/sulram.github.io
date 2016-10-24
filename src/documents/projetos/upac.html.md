@@ -5,6 +5,7 @@ rel:
 	- 'http://upac.com.br'
 layout: "default"
 tags:
+	- hotel da loucura
 	- web
 	- nodejs
 	- opensource

@@ -10,15 +10,19 @@ layout: master
     a.tag(href=data.url, rel=data.count, data-slug=data.tag.split(' ').join('-'), data-tag-weight=data.weight)
       = data.tag
   div.social__wrapper
-    div.social__item
+    //div.social__item
       a.social__icon.social__icon--email(href="mailto:m@marlus.com", target="_blank", title="m@marlus.com")
         i.icon--email
+    div.social__item
+      a.social__icon.social__icon--instagram(href="https://instagram.com/sulram", target="_blank", title="instagram.com/sulram")
+        i.icon--instagram
     div.social__item
       a.social__icon.social__icon--twitter(href="https://twitter.com/marlus", target="_blank", title="twitter.com/marlus")
         i.icon--twitter
     div.social__item
       a.social__icon.social__icon--github(href="https://github.com/sulram", target="_blank", title="github.com/sulram")
         i.icon--github
+    
 
 
 #loader.vfx

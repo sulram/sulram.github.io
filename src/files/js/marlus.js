@@ -117,6 +117,9 @@ function formatDates(){
     if($('.date').length){
         $('.date').text(formatOneDate($('.date').text()));
     }
+    if($('.post_content h1').text() == "perfil"){
+        $('.date').remove();
+    }
 }
 
 function formatOneDate(date){

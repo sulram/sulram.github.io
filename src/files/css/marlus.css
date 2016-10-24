@@ -183,6 +183,10 @@ h1, h2, h3, h4, h5, h6 {
 	background: #000;
 }
 
+#content video {
+	max-width: 100%;
+}
+
 #content ul {
 	margin: 0;
 	padding: 0;

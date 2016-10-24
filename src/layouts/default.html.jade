@@ -21,7 +21,11 @@ layout: master
     if document.vimeo
       li
         iframe(src="http://player.vimeo.com/video/"+document.vimeo+"?portrait=0", width="720", height="480", frameborder="0", webkitAllowFullScreen="webkitAllowFullScreen", mozallowfullscreen="mozallowfullscreen", allowFullScreen="allowFullScreen")
-    
+    if document.video
+      li
+        video(width="720", autoplay="autoplay", loop="loop")
+          source(src=document.video, type="video/mp4")
+
     for file in getDocument().getAssociatedFiles().toJSON()
       li
         img(src=file.url, title=file.name, class=typeof document.outlines === "undefined" ? "" : "outlined")

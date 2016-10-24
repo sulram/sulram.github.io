@@ -2,6 +2,7 @@
 title: "koi flow interactive floor"
 date: 2015-09
 vimeo: '150195166'
+video: 'https://dl.dropboxusercontent.com/u/1130459/portfolio/koiflow.mp4'
 rel:
 	- http://www.superuber.com.br/koi-flow-2/
 layout: default

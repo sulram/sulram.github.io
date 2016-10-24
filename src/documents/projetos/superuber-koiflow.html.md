@@ -18,7 +18,7 @@ A experiência é inspirada na filosofia Zen e na elegância dos Koi. Animaçõe
 
 Como designer e creative coder, utilizei diversas técnicas e plataformas para desenvolver este projeto da SuperUber:
 
-- Processing para prototipar as primeiras ideias
-- OpenFrameworks para criar a simulação de carpas que reagem às pessoas
-- TouchDesigner para criar uma composição visual realista, fazer o video mapping de dois projetores de alta resolução e conectar com o sensor de movimento
+- Processing para prototipar os insights: vitórias-régia generativas, movimento de cardume, (the nature of code)[http://natureofcode.com/]
+- OpenFrameworks para criar a simulação de carpas que reagem às pessoas, com performance computacional C++
+- TouchDesigner para criar uma composição visual realista utilizando shaders, fazer o video mapping de dois projetores de alta resolução e conectar com o sensor de movimento
 

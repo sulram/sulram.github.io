@@ -12,6 +12,7 @@ tags:
 	- video mapping
 	- kinect
 	- hiperorganismos
+	- pesquisa
 ---
 
 Kinetic.Lab é um grupo de pesquisa em artes cênicas e visuais interessado na utilização da tecnologia e suas hibridações com o corpo como estratégia criativa nos processos de construção de imagens e experiências estéticas.

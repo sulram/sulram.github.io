@@ -17,7 +17,7 @@ layout: master
   ul.slides
     if document.youtube
       li
-        iframe(src="//www.youtube.com/embed/"+document.youtube, width="720", height="480", frameborder="0", allowfullscreen="allowfullscreen")
+        iframe(src="//www.youtube.com/embed/"+document.youtube+"?rel=0", width="720", height="480", frameborder="0", allowfullscreen="allowfullscreen")
     if document.vimeo
       li
         iframe(src="http://player.vimeo.com/video/"+document.vimeo+"?portrait=0", width="720", height="480", frameborder="0", webkitAllowFullScreen="webkitAllowFullScreen", mozallowfullscreen="mozallowfullscreen", allowFullScreen="allowFullScreen")

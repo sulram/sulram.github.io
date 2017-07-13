@@ -7,7 +7,7 @@ tags: []
 
 Marlus Araujo é formado em design pela Escola de Belas Artes da UFRJ e pós-graduado em Projetos Digitais pelo IED Rio.
 
-Com mais de 10 anos de experiência em criação e desenvolvimento de projetos digitais, que vão desde sites, visualizações de dados interativas e outras interfaces para tela, para instalações interativas, ambientes imersivos e projeções para espetáculos e performances.
+Possui mais de 10 anos de experiência em criação e desenvolvimento de projetos digitais, desde sites, animações, visualizações de dados e outras interfaces para tela, até instalações interativas, ambientes imersivos, e projeções para espetáculos e performances.
 
 Como designer, diretor de arte e programador criativo, já realizou projetos para renomados estúdios de criação no Rio de Janeiro, entre eles 6D, SuperUber, Hardcuore e Ydreams, utilizando as mais diversas plataformas – HTML5, WebGL, Flash, Processing, OpenFrameworks, TouchDesigner e Arduino.
 

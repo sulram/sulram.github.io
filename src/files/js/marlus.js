@@ -120,6 +120,9 @@ function formatDates(){
     if($('.post_content h1').text() == "perfil"){
         $('.date').remove();
     }
+    if($('.post_content h1').text() == "360"){
+        $('.date').remove();
+    }
 }
 
 function formatOneDate(date){

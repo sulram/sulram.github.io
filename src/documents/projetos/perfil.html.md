@@ -7,12 +7,23 @@ tags: []
 
 Marlus Araujo é formado em design pela Escola de Belas Artes da UFRJ e pós-graduado em Projetos Digitais pelo IED Rio.
 
-Há mais de 10 anos atua no mercado profissional como designer, diretor de arte e programador criativo, desenvolvendo sites, interfaces, visualizações de dados, instalações interativas, ambientes imersivos e projeções para espetáculos e performances.
+Com mais de 10 anos de experiência em criação e desenvolvimento de projetos digitais, que vão desde sites, visualizações de dados interativas e outras interfaces para tela, para instalações interativas, ambientes imersivos e projeções para espetáculos e performances.
 
-Participou de projetos desafiadores em estúdios de criação como 6D, SuperUber, Hardcuore e Ydreams, desenvolvendo soluções em plataformas diversas como: HTML5, WebGL, Flash, Processing, OpenFrameworks, TouchDesigner e Arduino.
+Como designer, diretor de arte e programador criativo, já realizou projetos para renomados estúdios de criação no Rio de Janeiro, entre eles 6D, SuperUber, Hardcuore e Ydreams, utilizando as mais diversas plataformas – HTML5, WebGL, Flash, Processing, OpenFrameworks, TouchDesigner e Arduino.
 
-É colaborador de alguns laboratórios e coletivos que abrigam mentes inquietas e propositivas, entre eles NANO (EBA-UFRJ), LAMO3D (FAU-UFRJ), Medialab (ECO-UFRJ), Labic (UFES), Oi Kabum, Laboratório de Atividades do Amanhã (Museu do Amanhã), Olabi, Fabulosa, Encontros Digitais e Biônicos.
+É colaborador de alguns laboratórios de pesquisa e coletivos que abrigam mentes inquietas e propositivas:
 
-Já promoveu diversos workshops relacionados à cultura digital – Arduino, Processing, TouchDesigner, Impressão 3D – e recentemente foi professor da pós-graduação em Projetos Digitais do IED Rio.
+- NANO (EBA-UFRJ)
+- LAMO3D (FAU-UFRJ)
+- Medialab (ECO-UFRJ)
+- Labic (UFES)
+- Oi Kabum
+- Laboratório de Atividades do Amanhã (Museu do Amanhã)
+- Olabi
+- Fabulosa
+- Encontros Digitais
+- Biônicos
+
+Como educador, já promoveu diversos workshops relacionados à cultura digital e cultura maker – Arduino, Processing, TouchDesigner, Impressão 3D – e recentemente foi professor da pós-graduação em Projetos Digitais do IED Rio.
 
 [m@marlus.com](mailto:m@marlus.com)

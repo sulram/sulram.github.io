@@ -6,8 +6,6 @@ rel:
 layout: default
 tags:
 	- web
-	- html
-	- ultraleve
 ---
 
 Elementar é um sistema de fontes para telas/displays digitais criado pelo designer Gustavo Ferreira e comercializadas pela Typotheque.

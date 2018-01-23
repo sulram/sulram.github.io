@@ -6,12 +6,10 @@ video: 'http://host.marlus.com/portfolio/kineticlab-1.mp4'
 rel:
 	- http://kinetic-lab.weebly.com
 tags:
-	- creative coding
 	- performance
 	- touchdesigner
 	- video mapping
 	- kinect
-	- hiperorganismos
 	- pesquisa
 ---
 

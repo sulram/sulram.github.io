@@ -7,12 +7,11 @@ rel:
 	- http://www.superuber.com.br/koi-flow-2/
 layout: default
 tags:
-	- creative coding
 	- openframeworks
 	- processing
-	- superuber
 	- touchdesigner
 	- video mapping
+	- procedural
 ---
 
 A experiência é inspirada na filosofia Zen e na elegância dos Koi. Animações fluidas dão vida ao piso do Cassino San Manuel, na California, convidando o visitante a se tornar um co-autor do momento.

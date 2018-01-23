@@ -7,9 +7,6 @@ layout: default
 tags:
 	- web
 	- wordpress
-	- flash
-	- html
-	- ultraleve
 ---
 
 Em 2001, o arquiteto e aventureiro Argus Caruso começou uma viagem de bicicleta pelo planeta. Quando o termo **blog** ainda estava se popularizando no Brasil, teve a idéia de disponibilizar para as escolas o site **Pedalando e educando**, com relatórios e fotos de todos os países em que passava.

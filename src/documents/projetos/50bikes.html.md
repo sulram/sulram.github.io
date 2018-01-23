@@ -7,8 +7,6 @@ youtube: 'nRAJoBh9OUw'
 layout: default
 tags:
 	- arduino
-	- creative coding
-	- gambiarra
 	- opensource
 ---
 

@@ -6,10 +6,7 @@ layout: default
 tags:
   - web
   - datavis
-  - fabulosa
   - opensource
-  - nodejs
-  - html
 ---
 
 Tear, uma máquina para tecer e visualizar redes de palavras em tempo real.

@@ -6,9 +6,7 @@ rel:
 layout: "default"
 tags:
 	- hotel da loucura
-	- html
 	- opensource
-	- ultraleve
 	- web
 ---
 

@@ -3,7 +3,6 @@ title: "mulheres de grey gardens"
 date: 2013-05
 layout: "default"
 tags:
-	- creative coding
 	- teatro
 	- touchdesigner
 	- video mapping

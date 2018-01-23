@@ -7,10 +7,7 @@ layout: "default"
 tags:
 	- hotel da loucura
 	- web
-	- nodejs
 	- opensource
-	- ultraleve
-	- html
 ---
 
 Plataforma de rede para a Universidade Popular de Arte e Ciência, o Hotel da Loucura e o #OcupaNise.

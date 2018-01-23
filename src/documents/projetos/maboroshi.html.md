@@ -5,8 +5,6 @@ video: 'http://host.marlus.com/portfolio/maboroshi-video-1.mp4'
 layout: default
 tags:
 	- bots
-	- creative coding
-	- gambiarra
 	- touchdesigner
 	- ufrj
 	- nano

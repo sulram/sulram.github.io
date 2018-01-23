@@ -6,8 +6,6 @@ rel:
 layout: default
 tags:
 	- web
-	- html
-	- ultraleve
 ---
 
 Identidade visual e site para a empresa de catering aéreo.

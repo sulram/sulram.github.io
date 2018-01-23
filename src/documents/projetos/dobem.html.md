@@ -6,9 +6,7 @@ rel:
 layout: default
 tags:
   - web
-  - html
   - wordpress
-  - ultraleve
 ---
 
 Desenvolvimento do site wordpress para a **do bem**, em parceria com a [Hardcuore](http://hardcuore.com).

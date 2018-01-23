@@ -7,7 +7,7 @@ tags:
   - touchdesigner
   - datavis
   - kinect
-  - ydreams
+  - procedural
 ---
 
 Instalação de arte generativa e visualização de dados desenvolvida em parceria com a Ydreams Global para a campanha #LiveTheDream no Festival Path.

@@ -3,7 +3,6 @@ title: "Autobiografia Autorizada de Paulo Betti"
 date: 2015-03
 layout: "default"
 tags:
-	- creative coding
 	- teatro
 	- touchdesigner
 	- video mapping

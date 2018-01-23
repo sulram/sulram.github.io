@@ -7,11 +7,8 @@ rel:
 vimeo: '44531578'
 layout: "default"
 tags:
-	- creative coding
-	- game design
 	- kinect
 	- arduino
-	- gambiarra
 	- openframeworks
 	- opensource
 ---

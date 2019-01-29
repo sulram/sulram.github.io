@@ -21,6 +21,6 @@ Como pesquisador, colaborou com projetos de alguns núcleos e laboratórios de p
 - Laboratório de Atividades do Amanhã (Museu do Amanhã)
 - Olabi
 
-Como educador, promoveu workshops relacionados à cultura digital – Arduino, Processing, TouchDesigner, Impressão 3D – e recentemente foi professor da pós-graduação em Projetos Digitais do IED Rio.
+Como educador, promove workshops relacionados à cultura digital e cultura maker – Arduino, Processing, TouchDesigner, Impressão 3D – e recentemente foi professor da pós-graduação em Projetos Digitais do IED Rio.
 
 [m@marlus.com](mailto:m@marlus.com)

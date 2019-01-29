@@ -5,7 +5,6 @@ layout: default
 tags:
 	- arduino
 	- processing
-	- workshop
 ---
 
 Aulas de Arte Digital na Oi Kabum.

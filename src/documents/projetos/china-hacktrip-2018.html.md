@@ -4,7 +4,8 @@ date: 2018-11
 rel:
 	- 'http://bit.ly/chinahacktrip2018'
 layout: default
-tags: []
+tags:
+	- maker
 ---
 
 Fiz uma viagem incrível pela China, a Hacktrip organizada por Mitch Altman, fundador de um dos primeiros hackerspaces do mundo, o NoiseBridge em San Francisco (USA).

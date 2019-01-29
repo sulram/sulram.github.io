@@ -14,6 +14,7 @@ tags:
 	- pesquisa
 	- opensource
 	- bots
+	- maker
 ---
 
 Bot_anic trata-se da criação de um híbrido planta/robô que dá continuidade às investigações de Guto Nóbrega sobre processos com base no entrecruzamento de organismos naturais e artificiais no contexto da arte.

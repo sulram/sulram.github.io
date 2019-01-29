@@ -12,6 +12,7 @@ tags:
 	- openframeworks
 	- opensource
 	- game
+	- maker
 ---
 
 Bicicletorama é um jogo onde os jogadores pedalam e guiam bicicletas de verdade numa corrida virtu-real: ciclistas virtuais projetados numa pista cheias de obstáculos reais, carrinhos de brinquedo.

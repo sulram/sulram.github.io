@@ -15,6 +15,7 @@ tags:
 	- pesquisa
 	- opensource
 	- bots
+	- maker
 ---
 
 Sistema criado no [Núcleo de Artes e Novos Organismos](http://nano.eba.ufrj.br) (NANO/EBA/UFRJ) em função do projeto colaborativo LAboratorium Mapa D2, em parceria com a Profa. Ivani Santana (UFBA)

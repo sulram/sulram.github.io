@@ -10,6 +10,7 @@ tags:
 	- nano
 	- hiperorganismos
 	- kinect
+	- maker
 ---
 
 Maboroshi é uma palavra japonesa que se traduz em muitos significados, entre eles: “ilusão”, “visão”, “sonho”, “fantasma” e “fantasia”. 

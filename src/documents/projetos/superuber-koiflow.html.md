@@ -12,6 +12,7 @@ tags:
 	- touchdesigner
 	- video mapping
 	- procedural
+	- kinect
 ---
 
 A experiência é inspirada na filosofia Zen e na elegância dos Koi. Animações fluidas dão vida ao piso do Cassino San Manuel, na California, convidando o visitante a se tornar um co-autor do momento.

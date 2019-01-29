@@ -8,8 +8,9 @@ layout: master
   != content
   if document.rel != null
       each rel in document.rel
-        a.btn.vfx(href=rel, target="_blank")
-          =rel.split('://')[1]
+        div
+          a.btn.vfx(href=rel, target="_blank")
+            =rel.split('://')[1]
   .tags
     each tag in document.tags
       li= tag.split(' ').join('-').split('.').join('-')

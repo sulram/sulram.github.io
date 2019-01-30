@@ -8,14 +8,13 @@ rel:
 tags:
 	- touchdesigner
 	- video mapping
+	- performance
 ---
 
 “Somos defensoras da manufatura. De um outro tempo no fazer. Letra por letra deixamos emergir a poética do processo.”
 
 Projeções para o catálogo da coleção **Bota fé**, que celebra a parceria entre as designers Mana Bernardes e Paula Ferber.
 
-Fotografia e vídeo:
+**Fotografia e vídeo**
 
-- Carolina Rolim
-- Mayara Maluceli
-- Antonio Brasiliano
+Carolina Rolim, Mayara Maluceli e Antonio Brasiliano

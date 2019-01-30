@@ -1,5 +1,5 @@
 ---
-title: do bem™
+title: do bem
 date: 2014-07
 rel:
 	- 'http://dobem.com'

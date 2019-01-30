@@ -1,5 +1,5 @@
 ---
-title: "#LiveTheDream Festival Path"
+title: "live the dream"
 date: 2017-05
 layout: default
 youtube: 'usUSh20iS-U'

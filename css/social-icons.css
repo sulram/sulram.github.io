@@ -1,0 +1,98 @@
+/* source: http://codepen.io/matchboxhero/pen/onzkC */
+
+@import url(http://weloveiconfonts.com/api/?family=entypo);
+
+.icon--email::before {
+  content: "\2709";
+}
+
+.icon--vimeo::before {
+  content: "";
+}
+
+.icon--twitter::before {
+  content: "";
+}
+
+.icon--facebook::before {
+  content: "";
+}
+
+.icon--googleplus::before {
+  content: "";
+}
+
+.icon--pintrest::before {
+  content: "";
+}
+
+.icon--linkedin::before {
+  content: "";
+}
+
+.icon--instagram::before {
+  content: "";
+}
+
+.icon--github::before {
+  content: "";
+}
+
+
+.social__wrapper {
+  display: inline-block;
+  margin-top: 10px;
+  margin-left: 3px;
+}
+
+.social__item {
+  display: inline-block;
+  margin-right: 3px;
+  position: relative;
+  top: -1px;
+}
+
+.social__item a {
+  color: #999;
+  background-color: #fff;
+  border: 1px solid #999;
+}
+
+.social__item a:hover {
+  text-decoration: none;
+  color: #fff;
+  background-color: #999;
+}
+
+.icon, [class^="icon--"] {
+  font-family: 'entypo';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.social__icon, [class^="social__icon"] {
+  font-size: 0.75em;
+  text-decoration: none;
+  border-radius: 100%;
+  width: 2.2em;
+  height: 2.2em;
+  text-align: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}

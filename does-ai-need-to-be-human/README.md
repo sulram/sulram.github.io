@@ -4,7 +4,7 @@ Interactive poster by Marlus Araujo and Wenjue Yang. The Future of Art in the Ag
 
 Live: https://archive.marlus.com/does-ai-need-to-be-human/
 
-A cover with a QR code, twelve chapters and a closing page, narrated by two agents: A writes, B draws. The images are made of particles in WebGL and respond to touch. It opens with VISIONS by Orkhan Mammadov and passes through Reveries of the Apparatus (Devaneios do Aparato) by Marlus Araujo.
+A cover and twelve chapters, narrated by two agents: A writes, B draws. The images are made of particles in WebGL and respond to touch. It opens with VISIONS by Orkhan Mammadov and passes through Reveries of the Apparatus (Devaneios do Aparato) by Marlus Araujo.
 
 Readings: Lev Manovich and Emanuele Arielli, *Artificial Aesthetics*; Benjamin Bratton, Anna Greenspan, Amy Ireland and Bogna Konior (eds.), *Machine Decision Is Not Final*.
 
@@ -16,7 +16,7 @@ Made for a touch screen or a projector. Portrait (9:16) and landscape layouts.
 - A: auto play
 - L: switch layout
 - F: fullscreen
-- `#cover`, `#visions`, `#reveries`, `#end` and the other chapter ids open a chapter directly
+- `#cover`, `#visions`, `#reveries`, `#open` and the other chapter ids open a chapter directly
 
 ## Files
 

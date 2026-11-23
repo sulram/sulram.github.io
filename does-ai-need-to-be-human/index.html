@@ -144,8 +144,11 @@ nav .step:active { background: rgba(238,230,211,0.1); }
     linear-gradient(var(--c),var(--c)) top right / var(--l) 1px, linear-gradient(var(--c),var(--c)) top right / 1px var(--l),
     linear-gradient(var(--c),var(--c)) bottom left / var(--l) 1px, linear-gradient(var(--c),var(--c)) bottom left / 1px var(--l),
     linear-gradient(var(--c),var(--c)) bottom right / var(--l) 1px, linear-gradient(var(--c),var(--c)) bottom right / 1px var(--l); background-repeat: no-repeat; }
-.mk.qrcap { font-size: 0.56rem; line-height: 1.5; white-space: normal; color: var(--lead-dim); }
-.mk.qrcap .u { color: rgba(238,230,211,0.45); }
+.mk.qr { font-size: 0.48rem; line-height: 1.45; color: var(--lead-dim); white-space: normal; text-align: right; }
+.mk.qr .code { border-radius: 2px; overflow: hidden; margin-bottom: 0.5em; }
+.mk.qr .code svg { display: block; width: 100%; height: 100%; }
+.mk.qr > span { display: block; width: 30em; margin-left: calc(100% - 30em); white-space: nowrap; }
+.mk.qr .u { color: rgba(238,230,211,0.45); }
 .mk.cap2 { font-size: 0.5rem; line-height: 1.45; white-space: normal; }
 .mk.cap2 b { display: block; font-weight: 500; font-size: 0.56rem; margin-bottom: 0.35em; }
 .mk.cap2.a { color: var(--orpiment); text-align: right; } .mk.cap2.a p { color: rgba(232,178,58,0.82); }
@@ -282,11 +285,11 @@ const REFS = 'Arielli, E. (2024) “Even an AI Could Do That” and “Techno-an
    CONTENT: one entry per chapter, in order.
 ------------------------------------------------------------------- */
 const CH = [
-  { id: 'cover', nav: 'Cover', form: 'qrcode', prompt: 'before we begin',
+  { id: 'cover', nav: 'Cover', form: 'cover', qr: true, prompt: 'before we begin',
     head: 'Does AI need to be human at all?',
     body: 'An interactive poster. Two agents narrate it: A writes, B draws. Every line they write was written by Marlus Araujo and Wenjue Yang.',
     byline: 'The Future of Art in the Age of AI. HKUST (Guangzhou), 2026.',
-    hint: 'Scan the code to open this poster on your phone. Touch it to scatter the grains.',
+    hint: 'Scan the code to open this poster on your phone.',
     asks: [
       ['How do I move through it?', 'With the arrows at the bottom. Each chapter ends with questions: touch one and the agents answer it.'],
     ] },
@@ -411,14 +414,7 @@ const CH = [
 
   { id: 'open', nav: 'Open question', form: 'qfinal', prompt: 'what is left?',
     head: 'Not only whether AI can create without being human, but how AI may change what creativity means.',
-    byline: 'Marlus Araujo and Wenjue Yang.',
-    asks: [
-      ['References', REFS],
-    ] },
-  { id: 'end', nav: 'End', form: 'qrcode', prompt: 'take it with you',
-    head: 'Does AI need to be human at all?',
-    body: 'Marlus Araujo and Wenjue Yang. The Future of Art in the Age of AI, HKUST (Guangzhou), 2026.',
-    hint: 'Scan the code to open this poster on your phone.',
+    byline: 'Marlus Araujo and Wenjue Yang.', qr: true,
     asks: [
       ['References', REFS],
       ['Start again', null],
@@ -755,24 +751,17 @@ function fQmark(final) {
     return [Math.min(1, pd[k] / 255 * 1.7) * (1 - m) + L[0] * m, Math.min(1, pd[k + 1] / 255 * 1.7) * (1 - m) + L[1] * m, Math.min(1, pd[k + 2] / 255 * 1.7) * (1 - m) + L[2] * m];
   });
 }
-/* the cover: the grains settle into a QR code that opens this poster; light modules cream, dark modules near black */
-let qrRect = null;
-function fQR() {
-  const M = 33, Q = 3, n = M + Q * 2, side = Math.min(FR.x1 - FR.x0, FR.y1 - FR.y0) * 0.9;
-  const x0 = (FR.x0 + FR.x1) / 2 - side / 2, y0 = FR.y0 + (FR.y1 - FR.y0 - side) / 2;
-  qrRect = { x0, y0, w: side };
-  const k = Math.max(1, Math.floor(Math.sqrt(N) / n)), G = n * k, cell = side / G, used = G * G;
-  const pos = new Float32Array(N * 2), colr = new Float32Array(N * 3), sz = new Float32Array(N);
-  const dark = hex('#14100C');
-  for (let i = 0; i < N; i++) {
-    const g = i < used ? i : Math.floor(rnd() * used), gx = g % G, gy = Math.floor(g / G);
-    const mx_ = Math.floor(gx / k) - Q, my_ = Math.floor(gy / k) - Q;
-    const on = mx_ >= 0 && my_ >= 0 && mx_ < M && my_ < M && POSTER_QR_BITS[my_ * M + mx_] === '1';
-    pos[i * 2] = x0 + (gx + 0.5) * cell; pos[i * 2 + 1] = y0 + (gy + 0.5) * cell;
-    colr.set(on ? dark : jitterCol(PAL.lead, 0.03), i * 3);
-    sz[i] = 1 / (0.75 + A.aSeed[i] * 0.5); // cancel the per-grain size variation so the modules stay square
-  }
-  return { pos, col: colr, sz, size: cell * col.w * 1.06, drift: 0, sq: 1, att: -1 };
+/* the cover: the question itself, in grains */
+function fCover() {
+  const fw = FR.x1 - FR.x0, fh = FR.y1 - FR.y0, r = { x0: FR.x0, y0: FR.y0, w: fw, h: fh * 0.74 };
+  return glyphForm([{ t: 'Does AI' }, { t: 'need to be' }, { t: 'human', c: '#00ff00' }, { t: 'at all?' }], '600 {s} "Space Grotesk", Arial, sans-serif', r,
+    (rr, gg) => jitterCol(gg > rr ? PAL.orp : PAL.lead, 0.06), { lh: 0.98 });
+}
+/* a small QR code, built from the module matrix, for the first and last chapters */
+function qrSvg() {
+  const M = 33, Q = 2, n = M + Q * 2; let d = '';
+  for (let y = 0; y < M; y++) for (let x = 0; x < M; x++) if (POSTER_QR_BITS[y * M + x] === '1') d += `M${x + Q} ${y + Q}h1v1h-1z`;
+  return `<svg viewBox="0 0 ${n} ${n}" shape-rendering="crispEdges"><rect width="${n}" height="${n}" fill="#EEE6D3"/><path fill="#14100C" d="${d}"/></svg>`;
 }
 function fTitle() {
   const r = frFit(1.1);
@@ -1134,8 +1123,8 @@ function fTriad() {
   return discs(triadNodes, 0.3, routes);
 }
 
-const FORMS = { qrcode: fQR, painting: fPainting, qmark: () => fQmark(false), qfinal: () => fQmark(true), title: fTitle, quad: fQuad, swarm: fSwarm, mosaic: fMosaic, rengong: fRengong, tiles: fTiles, strata: fStrata, apparatus: fApparatus, triad: fTriad };
-const FORM_NAMES = { qrcode: 'a code that opens this poster', painting: 'an old-master painting', qmark: 'a question mark', qfinal: 'the painting, folded into a question', title: 'one word', quad: 'Arielli’s map', swarm: 'a swarm', mosaic: 'a dataset', rengong: '人工智能', tiles: 'six portraits', strata: 'layers of memory', apparatus: 'the bust and its image', triad: 'three relations' };
+const FORMS = { cover: fCover, painting: fPainting, qmark: () => fQmark(false), qfinal: () => fQmark(true), title: fTitle, quad: fQuad, swarm: fSwarm, mosaic: fMosaic, rengong: fRengong, tiles: fTiles, strata: fStrata, apparatus: fApparatus, triad: fTriad };
+const FORM_NAMES = { cover: 'the question', painting: 'an old-master painting', qmark: 'a question mark', qfinal: 'the painting, folded into a question', title: 'one word', quad: 'Arielli’s map', swarm: 'a swarm', mosaic: 'a dataset', rengong: '人工智能', tiles: 'six portraits', strata: 'layers of memory', apparatus: 'the bust and its image', triad: 'three relations' };
 
 function morphTo(name, dur = 2.4, oldCol = null) {
   let f = FORMS[name]();
@@ -1248,9 +1237,10 @@ function buildMarks(c) {
     c.quads.forEach((q, k) => { const R = quadRects[k]; const m = mk('quad', R.x0, R.y0 - 0.065 * (FR.y1 - FR.y0), q[0] + (k < 2 ? ' <b class="vis">VISIONS</b>' : '')); m.dataset.k = k; list.push(m); });
   }
   if (c.form === 'tiles') tileRects.forEach((R, k) => { const m = mk('chip' + (tileLabels[k] ? ' l' + tileLabels[k] : ''), R.x0 + 0.015 * K, R.y0 + 0.015 * K, tileLabelText(k)); m.dataset.k = k; list.push(m); });
-  if (c.form === 'qrcode' && qrRect) {
-    const label = MEDIA.posterUrl.replace(/^https?:\/\//, '').replace(/\/$/, '');
-    list.push(mk('qrcap', qrRect.x0, qrRect.y0 + qrRect.w + 0.03 * K, `Scan to open this poster<br><span class="u">${label}</span>`, qrRect.w));
+  if (c.qr && MEDIA.posterUrl && Math.min(innerWidth, innerHeight) >= 500) { // pointless on a phone
+    const label = MEDIA.posterUrl.replace(/^https?:\/\//, '').replace(/\/$/, ''), side = 0.16 * K;
+    const q = mk('qr', FR.x1 - side, FR.y1 - side, `<div class="code">${qrSvg()}</div><span>Scan to open this poster<br><span class="u">${label}</span></span>`, side);
+    q.querySelector('.code').style.height = side * col.w + 'px'; list.push(q);
   }
   if (c.form === 'apparatus' && app && app.G) {
     const G = app.G, F = G.frame, V = G.vfd, Hd = G.head;

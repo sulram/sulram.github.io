@@ -144,13 +144,8 @@ nav .step:active { background: rgba(238,230,211,0.1); }
     linear-gradient(var(--c),var(--c)) top right / var(--l) 1px, linear-gradient(var(--c),var(--c)) top right / 1px var(--l),
     linear-gradient(var(--c),var(--c)) bottom left / var(--l) 1px, linear-gradient(var(--c),var(--c)) bottom left / 1px var(--l),
     linear-gradient(var(--c),var(--c)) bottom right / var(--l) 1px, linear-gradient(var(--c),var(--c)) bottom right / 1px var(--l); background-repeat: no-repeat; }
-.mk.qr { display: flex; flex-direction: column; align-items: flex-end; gap: 0.3em; transform: translate(-100%, -100%); text-align: right; font-size: 0.5rem; color: var(--lead-dim); }
-.mk.qr .code { border-radius: 3px; overflow: hidden; margin-bottom: 0.35em; box-shadow: 0 0 0 1px rgba(238,230,211,0.25); }
-.mk.qr .code svg { display: block; width: 100%; height: 100%; }
-.mk.qr .t span { display: block; } .mk.qr .u { color: rgba(238,230,211,0.45); }
-body:not(.land) .mk.qr { flex-direction: row-reverse; align-items: flex-end; gap: 0.9em; transform: translate(-100%, 0); }
-body:not(.land) .mk.qr .code { margin-bottom: 0; }
-body:not(.land) .mk.qr .t span + span { margin-top: 0.3em; }
+.mk.qrcap { font-size: 0.56rem; line-height: 1.5; white-space: normal; color: var(--lead-dim); }
+.mk.qrcap .u { color: rgba(238,230,211,0.45); }
 .mk.cap2 { font-size: 0.5rem; line-height: 1.45; white-space: normal; }
 .mk.cap2 b { display: block; font-weight: 500; font-size: 0.56rem; margin-bottom: 0.35em; }
 .mk.cap2.a { color: var(--orpiment); text-align: right; } .mk.cap2.a p { color: rgba(232,178,58,0.82); }
@@ -182,17 +177,6 @@ body:not(.land) .mk.qr .t span + span { margin-top: 0.3em; }
 #lightbox .count { font-family: var(--mono); font-size: 0.6rem; color: rgba(238,230,211,0.45); min-width: 4em; text-align: center; }
 
 /* opening card */
-#intro { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(20,16,12,0.72); z-index: 5; transition: opacity 0.9s ease; cursor: pointer; }
-#intro.off { opacity: 0; pointer-events: none; }
-#intro .card { width: min(84vw, 47vh); text-align: left; }
-#intro h1 { font-family: var(--display); font-weight: 600; font-size: 2.7rem; line-height: 1.0; letter-spacing: -0.035em; }
-#intro p { margin-top: 1.4em; font-family: var(--mono); font-size: 0.72rem; line-height: 1.6; color: var(--lead-dim); }
-#intro p b { font-weight: 500; }
-#intro .a { color: var(--orpiment); }
-#intro .b { color: var(--ultra-text); }
-#intro .go { margin-top: 2em; display: inline-block; font-family: var(--mono); font-size: 0.78rem; color: var(--bitumen); background: var(--orpiment); padding: 0.6em 1em; border-radius: 3px; }
-body.land #intro .card { width: min(70vw, 34em); }
-
 /* landscape: the field on the left, the agents' text on the right */
 #scrim { position: absolute; top: 0; bottom: 0; right: 0; width: 50%; pointer-events: none; display: none;
   background: linear-gradient(to right, rgba(20,16,12,0) 0%, rgba(20,16,12,0.86) 16%, rgba(20,16,12,0.94) 100%); }
@@ -249,13 +233,6 @@ body.land #ticks button.cur .nm { color: var(--orpiment); }
   <div class="row"><button class="lb" id="lbPrev">Previous</button><span class="count"></span><button class="lb" id="lbNext">Next</button><button class="lb" id="lbClose">Close</button></div>
 </div>
 
-<div id="intro" role="dialog" aria-label="Introduction">
-  <div class="card">
-    <h1>Does AI need to be human at all?</h1>
-    <p>Two agents narrate this poster.<br><b class="a">A</b> writes. <b class="b">B</b> draws.<br>Every line they write was written by Marlus Araujo and Wenjue Yang.</p>
-    <button class="go" id="go">Touch to begin</button>
-  </div>
-</div>
 
 <script>
 'use strict';
@@ -283,7 +260,7 @@ const MEDIA = {
 /* Sentences replayed on the poster's display. The first sentence and its notes,
    and the second sentence, are real outputs of Reveries of the Apparatus; the
    others were written for this poster in the same manner. Add real ones here. */
-const POSTER_QR = '<svg viewBox="0 0 37 37" class="segno"><path fill="#eee6d3" d="M0 0h37v37h-37z"/><path class="qrline" stroke="#14100c" d="M2 2.5h7m2 0h3m2 0h2m3 0h1m3 0h1m2 0h7m-33 1h1m5 0h1m2 0h1m2 0h1m2 0h1m1 0h1m2 0h2m1 0h2m1 0h1m5 0h1m-33 1h1m1 0h3m1 0h1m2 0h1m2 0h1m1 0h2m1 0h2m1 0h1m2 0h2m1 0h1m1 0h3m1 0h1m-33 1h1m1 0h3m1 0h1m2 0h5m3 0h1m1 0h1m6 0h1m1 0h3m1 0h1m-33 1h1m1 0h3m1 0h1m2 0h2m1 0h2m2 0h1m1 0h3m2 0h1m2 0h1m1 0h3m1 0h1m-33 1h1m5 0h1m1 0h1m3 0h2m3 0h1m1 0h1m2 0h1m3 0h1m5 0h1m-33 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-23 1h1m3 0h1m2 0h6m-23 1h1m2 0h1m1 0h2m1 0h1m4 0h4m1 0h4m1 0h3m1 0h1m-27 1h1m1 0h2m2 0h1m3 0h2m1 0h1m1 0h1m3 0h1m3 0h4m3 0h2m-32 1h3m2 0h1m5 0h1m4 0h1m1 0h2m1 0h1m1 0h1m1 0h3m1 0h1m1 0h1m-33 1h4m3 0h1m2 0h3m1 0h4m1 0h1m1 0h2m2 0h2m1 0h2m2 0h1m-33 1h2m1 0h2m1 0h4m9 0h3m1 0h2m1 0h1m2 0h1m2 0h1m-32 1h3m4 0h2m1 0h2m2 0h2m2 0h1m1 0h2m1 0h1m1 0h1m1 0h5m-33 1h1m1 0h1m1 0h4m1 0h3m11 0h1m1 0h4m1 0h2m-32 1h1m2 0h1m3 0h1m1 0h2m1 0h2m1 0h1m1 0h1m2 0h5m1 0h1m2 0h1m1 0h1m-31 1h1m1 0h2m1 0h1m4 0h1m1 0h1m3 0h1m2 0h2m1 0h2m1 0h1m1 0h1m2 0h1m-32 1h3m1 0h2m1 0h1m1 0h4m1 0h1m1 0h1m6 0h3m1 0h1m1 0h1m1 0h1m-30 1h1m2 0h2m3 0h3m1 0h1m3 0h1m1 0h1m1 0h1m2 0h1m4 0h3m-33 1h1m3 0h2m1 0h1m1 0h1m1 0h4m2 0h3m1 0h2m2 0h1m1 0h1m3 0h1m-29 1h2m1 0h2m2 0h1m2 0h6m2 0h1m1 0h3m5 0h2m-31 1h2m1 0h1m1 0h3m1 0h1m2 0h5m1 0h1m1 0h1m3 0h1m3 0h3m-33 1h4m1 0h2m5 0h1m2 0h1m1 0h3m1 0h2m2 0h3m1 0h2m1 0h1m-32 1h2m2 0h1m1 0h1m1 0h1m2 0h3m1 0h1m1 0h4m1 0h2m1 0h1m2 0h1m1 0h2m-33 1h1m1 0h3m1 0h3m1 0h4m1 0h3m3 0h1m1 0h6m2 0h2m-25 1h1m2 0h2m1 0h1m1 0h1m2 0h6m3 0h2m2 0h1m-33 1h7m4 0h2m1 0h1m5 0h1m3 0h1m1 0h1m1 0h3m-31 1h1m5 0h1m1 0h1m1 0h1m3 0h3m2 0h1m1 0h2m1 0h1m3 0h1m3 0h1m-33 1h1m1 0h3m1 0h1m2 0h1m1 0h1m2 0h3m2 0h4m1 0h6m1 0h2m-33 1h1m1 0h3m1 0h1m1 0h1m1 0h1m4 0h1m1 0h1m6 0h1m1 0h1m1 0h3m-31 1h1m1 0h3m1 0h1m2 0h5m3 0h1m6 0h2m2 0h1m3 0h1m-33 1h1m5 0h1m2 0h1m1 0h3m1 0h4m1 0h2m1 0h3m-26 1h7m1 0h5m3 0h1m2 0h1m1 0h1m2 0h1m3 0h2m1 0h1"/></svg>';
+const POSTER_QR_BITS = '111111100111001100010001001111111100000100100100101001101101000001101110100100101101101001101011101101110100111110001010000001011101101110100110110010111001001011101100000101000110001010010001000001111111101010101010101010101111111000000000010001001111110000000000100101101000011110111101110100000010110010001101010001000111100011011100100000100001011010101110101111100010011101111010110011011001110110111100000000011101101001001011100001101100110010110101011111101011110111000000000001011110110100100010110110101001111101001010010110100001010001001101101010010111011010111101010000001110101010001001100011101000101010010000111100011010101111001110110010100010000110110010011111100101110000011001101011101001111101010001000111111101100000100101110110011101101011001010100111010111101101001011101110111011110111000101111110011000000001001101010011111100011001111111100001101000001000101011100100000101010001110010110100010001101110100101001110011110111111011101110101010000101000000101011100101110100111110001000000110010001100000100101110111101101110000000111111101111100010010100100011010'; // QR of MEDIA.posterUrl, 33 x 33 modules, row by row (regenerate with the URL)
 const REVERIES_LINES = [
   { think: 'from individual mark to orchestrated chromatic field.', say: 'Absence structures more than presence knows.', img: 'A cylinder carved in white marble, broken into a scatter of pieces by pure void segments, floating in mid-air above a marble etching bench.', m: 0 },
   { think: 'the cave again: what we see is never the thing itself.', say: 'A realidade é apenas uma sombra da verdade.', img: 'A single marble sphere on a cave floor, casting a long shadow toward the viewer.', m: 1 },
@@ -305,6 +282,14 @@ const REFS = 'Arielli, E. (2024) “Even an AI Could Do That” and “Techno-an
    CONTENT: one entry per chapter, in order.
 ------------------------------------------------------------------- */
 const CH = [
+  { id: 'cover', nav: 'Cover', form: 'qrcode', prompt: 'before we begin',
+    head: 'Does AI need to be human at all?',
+    body: 'An interactive poster. Two agents narrate it: A writes, B draws. Every line they write was written by Marlus Araujo and Wenjue Yang.',
+    byline: 'The Future of Art in the Age of AI. HKUST (Guangzhou), 2026.',
+    hint: 'Scan the code to open this poster on your phone. Touch it to scatter the grains.',
+    asks: [
+      ['How do I move through it?', 'With the arrows at the bottom. Each chapter ends with questions: touch one and the agents answer it.'],
+    ] },
   { id: 'visions', nav: 'VISIONS', form: 'painting', prompt: 'who made this?',
     head: 'VISIONS, by Orkhan Mammadov.',
     body: 'AI-generated paintings in the spirit of Holbein, Bosch and Bruegel. Object recognition runs over the image: select a region and it regenerates, rewriting the whole piece.',
@@ -314,7 +299,7 @@ const CH = [
       ['Is this the real artwork?', 'No. Agent B is sketching it with particles for this poster. The real VISIONS pieces are interactive works, best explored on a computer. Open the series to see them.'],
     ],
     link: ['Open VISIONS on Verse', 'visionsLink'],
-    source: 'Orkhan Mammadov, VISIONS. verse.works/series/visions-by-orkhan', qr: true },
+    source: 'Orkhan Mammadov, VISIONS. verse.works/series/visions-by-orkhan' },
 
   { id: 'question', nav: 'The question', form: 'qmark', prompt: 'did knowing that change anything?',
     head: 'When we admire an artwork, we often assume a creative mind stands behind it.',
@@ -389,7 +374,7 @@ const CH = [
     hint: 'Tap a tile to label it.',
     react: 'You just labelled data. A model trained on choices like yours would learn your taste and present it as its own.',
     asks: [
-      ['Is this real data?', 'No. These tiles and labels are illustrative. Bao’s research is unpublished doctoral fieldwork on data annotation.'],
+      ['Is this real data?', 'No. These portraits and labels are illustrative. Bao’s research is unpublished doctoral fieldwork on data annotation.'],
     ],
     source: 'Bao, X., unpublished doctoral research on data annotation' },
 
@@ -426,7 +411,14 @@ const CH = [
 
   { id: 'open', nav: 'Open question', form: 'qfinal', prompt: 'what is left?',
     head: 'Not only whether AI can create without being human, but how AI may change what creativity means.',
-    byline: 'Marlus Araujo and Wenjue Yang.', qr: true,
+    byline: 'Marlus Araujo and Wenjue Yang.',
+    asks: [
+      ['References', REFS],
+    ] },
+  { id: 'end', nav: 'End', form: 'qrcode', prompt: 'take it with you',
+    head: 'Does AI need to be human at all?',
+    body: 'Marlus Araujo and Wenjue Yang. The Future of Art in the Age of AI, HKUST (Guangzhou), 2026.',
+    hint: 'Scan the code to open this poster on your phone.',
     asks: [
       ['References', REFS],
       ['Start again', null],
@@ -763,6 +755,25 @@ function fQmark(final) {
     return [Math.min(1, pd[k] / 255 * 1.7) * (1 - m) + L[0] * m, Math.min(1, pd[k + 1] / 255 * 1.7) * (1 - m) + L[1] * m, Math.min(1, pd[k + 2] / 255 * 1.7) * (1 - m) + L[2] * m];
   });
 }
+/* the cover: the grains settle into a QR code that opens this poster; light modules cream, dark modules near black */
+let qrRect = null;
+function fQR() {
+  const M = 33, Q = 3, n = M + Q * 2, side = Math.min(FR.x1 - FR.x0, FR.y1 - FR.y0) * 0.9;
+  const x0 = (FR.x0 + FR.x1) / 2 - side / 2, y0 = FR.y0 + (FR.y1 - FR.y0 - side) / 2;
+  qrRect = { x0, y0, w: side };
+  const k = Math.max(1, Math.floor(Math.sqrt(N) / n)), G = n * k, cell = side / G, used = G * G;
+  const pos = new Float32Array(N * 2), colr = new Float32Array(N * 3), sz = new Float32Array(N);
+  const dark = hex('#14100C');
+  for (let i = 0; i < N; i++) {
+    const g = i < used ? i : Math.floor(rnd() * used), gx = g % G, gy = Math.floor(g / G);
+    const mx_ = Math.floor(gx / k) - Q, my_ = Math.floor(gy / k) - Q;
+    const on = mx_ >= 0 && my_ >= 0 && mx_ < M && my_ < M && POSTER_QR_BITS[my_ * M + mx_] === '1';
+    pos[i * 2] = x0 + (gx + 0.5) * cell; pos[i * 2 + 1] = y0 + (gy + 0.5) * cell;
+    colr.set(on ? dark : jitterCol(PAL.lead, 0.03), i * 3);
+    sz[i] = 1 / (0.75 + A.aSeed[i] * 0.5); // cancel the per-grain size variation so the modules stay square
+  }
+  return { pos, col: colr, sz, size: cell * col.w * 1.06, drift: 0, sq: 1, att: -1 };
+}
 function fTitle() {
   const r = frFit(1.1);
   return glyphForm([{ t: 'human', c: '#ff0000' }, { t: '?', c: '#00ff00' }], '600 {s} "Space Grotesk", Arial, sans-serif', r,
@@ -823,19 +834,67 @@ function fMosaic() {
 
 /* six tiles waiting for labels */
 let tileRects = [];
+/* six portraits of women, flat and minimal, for the annotators to label */
+const PORTRAITS = [
+  { bg: ['#6B4A33', '#C99A3A'], skin: '#E3B48A', hair: '#2A1A12', cloth: '#EEE6D3', lip: '#B5452E', style: 'bob' },
+  { bg: ['#5A6CFF', '#C9CEF5'], skin: '#8C5A3C', hair: '#14100C', cloth: '#E8B23A', lip: '#6E2A22', style: 'afro' },
+  { bg: ['#2F5E50', '#6FA894'], skin: '#F0D2B6', hair: '#C9742E', cloth: '#2A211A', lip: '#C2563D', style: 'long' },
+  { bg: ['#D9472B', '#8C8273'], skin: '#5E3B2A', hair: '#14100C', cloth: '#EEE6D3', lip: '#3A1E16', style: 'profile' },
+  { bg: ['#E9DFC6', '#C99A3A'], skin: '#D6A77E', hair: '#3B2A22', cloth: '#5A6CFF', lip: '#A8432F', style: 'bun' },
+  { bg: ['#8C8273', '#9AA6FF'], skin: '#EBC9A8', hair: '#EEE6D3', cloth: '#D9472B', lip: '#B0463A', style: 'pixie' },
+];
+function drawPortrait(ctx, W, H, P) {
+  const g = ctx.createLinearGradient(0, 0, W, H); g.addColorStop(0, P.bg[0]); g.addColorStop(1, P.bg[1]);
+  ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
+  const S = Math.min(W, H) * 1.0, ox = W / 2, oy = H - S; // figure units: x from -0.5 to 0.5, y from 0 to 1
+  const X = x => ox + x * S, Y = y => oy + y * S, R = r => r * S;
+  const ell = (x, y, rx, ry, c, rot = 0) => { ctx.fillStyle = c; ctx.beginPath(); ctx.ellipse(X(x), Y(y), R(rx), R(ry), rot, 0, Math.PI * 2); ctx.fill(); };
+  const poly = (pts, c) => { ctx.fillStyle = c; ctx.beginPath(); pts.forEach(([x, y], i) => i ? ctx.lineTo(X(x), Y(y)) : ctx.moveTo(X(x), Y(y))); ctx.closePath(); ctx.fill(); };
+  const shade = (c, f) => { const v = hex(c); return `rgb(${v.map(t => Math.round(Math.min(1, t * f) * 255)).join(',')})`; };
+  if (P.style === 'profile') { // facing left, hair gathered at the back
+    ell(0, 1.08, 0.4, 0.3, P.cloth);
+    poly([[-0.05, 0.62], [0.08, 0.6], [0.1, 0.84], [-0.06, 0.86]], shade(P.skin, 0.85));
+    ell(0.04, 0.4, 0.17, 0.2, P.skin);
+    poly([[-0.1, 0.26], [-0.13, 0.36], [-0.2, 0.45], [-0.13, 0.47], [-0.15, 0.52], [-0.12, 0.55], [-0.13, 0.6], [-0.04, 0.64], [0.04, 0.6]], P.skin);
+    ell(-0.135, 0.535, 0.022, 0.012, P.lip);
+    ell(0.13, 0.31, 0.16, 0.14, P.hair, -0.4); poly([[-0.1, 0.22], [0.05, 0.16], [0.2, 0.2], [0.02, 0.28], [-0.09, 0.3]], P.hair); ell(0.27, 0.4, 0.08, 0.09, P.hair);
+    ell(-0.075, 0.385, 0.03, 0.008, shade(P.skin, 0.5));
+    return;
+  }
+  if (P.style === 'long') poly([[-0.25, 0.2], [0.25, 0.2], [0.3, 0.88], [-0.3, 0.88]], P.hair);
+  if (P.style === 'afro') ell(0, 0.36, 0.33, 0.3, P.hair);
+  if (P.style === 'bob') { ell(0, 0.36, 0.25, 0.24, P.hair); poly([[-0.25, 0.36], [0.25, 0.36], [0.24, 0.6], [-0.24, 0.6]], P.hair); }
+  if (P.style === 'bun') ell(0, 0.12, 0.11, 0.09, P.hair);
+  ell(0, 1.1, 0.42, 0.34, P.cloth);
+  poly([[-0.07, 0.55], [0.07, 0.55], [0.08, 0.82], [-0.08, 0.82]], shade(P.skin, 0.82));
+  ell(0, 0.43, 0.155, 0.205, P.skin);
+  if (P.style === 'pixie') { ell(0.02, 0.26, 0.19, 0.11, P.hair, 0.15); ell(-0.15, 0.33, 0.05, 0.1, P.hair); ell(0.17, 0.53, 0.018, 0.018, '#E8B23A'); ell(-0.17, 0.53, 0.018, 0.018, '#E8B23A'); }
+  if (P.style === 'bob') { poly([[-0.17, 0.22], [0.17, 0.22], [0.17, 0.34], [-0.17, 0.32]], P.hair); }
+  if (P.style === 'long') { ell(0, 0.25, 0.18, 0.08, P.hair); poly([[-0.2, 0.24], [-0.12, 0.26], [-0.15, 0.7], [-0.24, 0.72]], P.hair); poly([[0.2, 0.24], [0.12, 0.26], [0.15, 0.7], [0.24, 0.72]], P.hair); }
+  if (P.style === 'afro') ell(0, 0.24, 0.17, 0.07, P.hair);
+  if (P.style === 'bun') ell(0, 0.27, 0.165, 0.09, P.hair);
+  const eye = shade(P.skin, 0.45);
+  ell(-0.065, 0.42, 0.03, 0.009, eye); ell(0.065, 0.42, 0.03, 0.009, eye);
+  ell(0, 0.535, 0.035, 0.014, P.lip);
+}
 function fTiles() {
   const land = mode === 'landscape', cols = land ? 3 : 2, rows = land ? 2 : 3, gap = 0.04 * K, w = (FR.x1 - FR.x0 - gap * (cols - 1)) / cols, h = (FR.y1 - FR.y0 - gap * (rows - 1)) / rows;
   tileRects = [];
   for (let k = 0; k < 6; k++) tileRects.push({ x0: FR.x0 + (k % cols) * (w + gap), y0: FR.y0 + Math.floor(k / cols) * (h + gap), w, h });
-  const pal = [[PAL.umber, PAL.ochre], [PAL.ultra, PAL.lead], [PAL.verdi, PAL.umber], [PAL.verm, PAL.dim], [PAL.ochre, PAL.lead], [PAL.dim, PAL.ultraL]];
-  const pos = new Float32Array(N * 2), colr = new Float32Array(N * 3);
+  const pos = new Float32Array(N * 2), colr = new Float32Array(N * 3), per = Math.floor(N / 6);
+  const gc = Math.max(4, Math.round(Math.sqrt(per * w / h))), gr = Math.ceil(per / gc);
+  const cv2 = fTiles.c || (fTiles.c = document.createElement('canvas')), CW = Math.round(160 * Math.max(1, w / h)), CH2 = Math.round(160 * Math.max(1, h / w));
+  cv2.width = CW; cv2.height = CH2; const ctx = cv2.getContext('2d', { willReadFrequently: true });
+  const data = PORTRAITS.map(P => { ctx.clearRect(0, 0, CW, CH2); drawPortrait(ctx, CW, CH2, P); return ctx.getImageData(0, 0, CW, CH2).data; });
   for (let i = 0; i < N; i++) {
-    const k = i % 6, R = tileRects[k], u = rnd(), v = rnd();
+    const k = Math.min(5, Math.floor(i / per)), j = i - k * per, R = tileRects[k];
+    const cell = j < gc * gr ? j : Math.floor(rnd() * gc * gr);
+    const u = ((cell % gc) + 0.5 + (rnd() - 0.5) * 0.3) / gc, v = (Math.floor(cell / gc) + 0.5 + (rnd() - 0.5) * 0.3) / gr;
     pos[i * 2] = R.x0 + u * R.w; pos[i * 2 + 1] = R.y0 + v * R.h;
-    const [a, b] = pal[k], m = Math.min(1, Math.max(0, (Math.sin(u * 5 + k) * 0.5 + 0.5) * 0.6 + v * 0.4));
-    colr.set(jitterCol([a[0] + (b[0] - a[0]) * m, a[1] + (b[1] - a[1]) * m, a[2] + (b[2] - a[2]) * m], 0.1), i * 3);
+    const d = data[k], q = (Math.min(CH2 - 1, Math.floor(v * CH2)) * CW + Math.min(CW - 1, Math.floor(u * CW))) * 4;
+    colr.set(jitterCol([d[q] / 255, d[q + 1] / 255, d[q + 2] / 255], 0.05), i * 3);
   }
-  return { pos, col: colr, size: areaSize((FR.x1 - FR.x0) * (FR.y1 - FR.y0) * 0.9) * 1.05, drift: 0.0012, sq: 1, att: -1 };
+  return { pos, col: colr, size: (w / gc) * col.w * 1.15, drift: 0.0005, sq: 1, att: -1 };
 }
 
 /* strata of cultural memory */
@@ -1075,8 +1134,8 @@ function fTriad() {
   return discs(triadNodes, 0.3, routes);
 }
 
-const FORMS = { painting: fPainting, qmark: () => fQmark(false), qfinal: () => fQmark(true), title: fTitle, quad: fQuad, swarm: fSwarm, mosaic: fMosaic, rengong: fRengong, tiles: fTiles, strata: fStrata, apparatus: fApparatus, triad: fTriad };
-const FORM_NAMES = { painting: 'an old-master painting', qmark: 'a question mark', qfinal: 'the painting, folded into a question', title: 'one word', quad: 'Arielli’s map', swarm: 'a swarm', mosaic: 'a dataset', rengong: '人工智能', tiles: 'six images', strata: 'layers of memory', apparatus: 'the bust and its image', triad: 'three relations' };
+const FORMS = { qrcode: fQR, painting: fPainting, qmark: () => fQmark(false), qfinal: () => fQmark(true), title: fTitle, quad: fQuad, swarm: fSwarm, mosaic: fMosaic, rengong: fRengong, tiles: fTiles, strata: fStrata, apparatus: fApparatus, triad: fTriad };
+const FORM_NAMES = { qrcode: 'a code that opens this poster', painting: 'an old-master painting', qmark: 'a question mark', qfinal: 'the painting, folded into a question', title: 'one word', quad: 'Arielli’s map', swarm: 'a swarm', mosaic: 'a dataset', rengong: '人工智能', tiles: 'six portraits', strata: 'layers of memory', apparatus: 'the bust and its image', triad: 'three relations' };
 
 function morphTo(name, dur = 2.4, oldCol = null) {
   let f = FORMS[name]();
@@ -1189,11 +1248,9 @@ function buildMarks(c) {
     c.quads.forEach((q, k) => { const R = quadRects[k]; const m = mk('quad', R.x0, R.y0 - 0.065 * (FR.y1 - FR.y0), q[0] + (k < 2 ? ' <b class="vis">VISIONS</b>' : '')); m.dataset.k = k; list.push(m); });
   }
   if (c.form === 'tiles') tileRects.forEach((R, k) => { const m = mk('chip' + (tileLabels[k] ? ' l' + tileLabels[k] : ''), R.x0 + 0.015 * K, R.y0 + 0.015 * K, tileLabelText(k)); m.dataset.k = k; list.push(m); });
-  if (c.qr && MEDIA.posterUrl && Math.min(innerWidth, innerHeight) >= 500) { // a way to carry the poster away; pointless on a phone
+  if (c.form === 'qrcode' && qrRect) {
     const label = MEDIA.posterUrl.replace(/^https?:\/\//, '').replace(/\/$/, '');
-    const land = document.body.classList.contains('land');
-    const q = mk('qr', FR.x1, land ? FR.y1 : FR.y1 + 0.025 * K, `<div class="code">${POSTER_QR}</div><div class="t"><span>Scan to open this poster</span><span class="u">${label}</span></div>`);
-    const box = q.querySelector('.code'); box.style.width = box.style.height = (0.17 * K * col.w) + 'px'; list.push(q);
+    list.push(mk('qrcap', qrRect.x0, qrRect.y0 + qrRect.w + 0.03 * K, `Scan to open this poster<br><span class="u">${label}</span>`, qrRect.w));
   }
   if (c.form === 'apparatus' && app && app.G) {
     const G = app.G, F = G.frame, V = G.vfd, Hd = G.head;
@@ -1348,7 +1405,7 @@ function showPoll(c, thread) {
    Touch and pointer
 ------------------------------------------------------------------- */
 let down = null, lastInput = performance.now();
-function inUI(el) { return !!(el && el.closest && el.closest('#panel, nav, header, #intro, #lightbox, button, a')) || (mode === 'landscape' && el && el.id === 'scrim'); }
+function inUI(el) { return !!(el && el.closest && el.closest('#panel, nav, header, #lightbox, button, a')) || (mode === 'landscape' && el && el.id === 'scrim'); }
 addEventListener('pointerdown', e => {
   lastInput = performance.now(); if (autoOn && CONFIG.idleAutoplaySeconds) setAuto(false);
   if (inUI(e.target)) return;
@@ -1445,7 +1502,7 @@ addEventListener('keydown', e => {
 });
 $('#next').onclick = () => go(cur + 1);
 $('#prev').onclick = () => go(cur - 1);
-$('#ttl').onclick = () => go(2);
+$('#ttl').onclick = () => go(0);
 
 /* Auto mode */
 let autoOn = false;
@@ -1473,7 +1530,7 @@ function setMode(m) {
 $('#mode').onclick = () => setMode(mode === 'portrait' ? 'landscape' : 'portrait');
 let introGone = false;
 function startPoster() {
-  if (introGone) return; introGone = true; $('#intro').classList.add('off'); lastInput = performance.now();
+  if (introGone) return; introGone = true; lastInput = performance.now();
   const h = location.hash.slice(1), k = CH.findIndex(c => c.id === h);
   go(k >= 0 ? k : 0);
 }
@@ -1495,8 +1552,7 @@ function startPoster() {
     ]), new Promise(r => setTimeout(r, 2500))]);
   } catch (e) {}
   addEventListener('resize', () => { clearTimeout(resize.t); resize.t = setTimeout(() => resize(1.2), 150); });
-  $('#go').onclick = startPoster; $('#intro').addEventListener('click', startPoster);
-  setTimeout(startPoster, reduced ? 1500 : 6000);
+  startPoster();
 })();
 </script>
 </body>
